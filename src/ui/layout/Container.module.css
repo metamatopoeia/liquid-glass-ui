@@ -1,0 +1,15 @@
+/* Container — Structural only, no glass treatment */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+.xs { composes: container; max-width: 444px; }
+.sm { composes: container; max-width: 600px; }
+.md { composes: container; max-width: 900px; }
+.lg { composes: container; max-width: 1200px; }

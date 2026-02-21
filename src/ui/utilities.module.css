@@ -1,0 +1,6 @@
+/* Utility classes — text colors */
+
+.textPrimary { color: var(--lg-color-text-primary); }
+.textSecondary { color: var(--lg-color-text-secondary); }
+.textDisabled { color: var(--lg-color-text-disabled); }
+.textError { color: var(--lg-color-error); }

@@ -1,0 +1,73 @@
+/* Alert — Glass surface with tinted background per severity */
+
+.alert {
+  display: flex;
+  padding: 6px 16px;
+  font-family: var(--lg-font-family);
+  font-size: 0.875rem;
+  line-height: 1.43;
+  border-radius: var(--lg-radius-md);
+  align-items: flex-start;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--lg-border);
+}
+
+.alert::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-reflection);
+  pointer-events: none;
+}
+
+.error {
+  composes: alert;
+  color: var(--lg-color-error-text);
+  background-color: rgba(211, 47, 47, 0.12);
+}
+
+.warning {
+  composes: alert;
+  color: var(--lg-color-warning-text);
+  background-color: rgba(237, 108, 2, 0.12);
+}
+
+.info {
+  composes: alert;
+  color: var(--lg-color-info-text);
+  background-color: rgba(2, 136, 209, 0.12);
+}
+
+.success {
+  composes: alert;
+  color: var(--lg-color-success-text);
+  background-color: rgba(46, 125, 50, 0.12);
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  margin-right: 12px;
+  padding: 7px 0;
+  display: flex;
+  font-size: 22px;
+  opacity: 0.9;
+}
+
+.message {
+  position: relative;
+  z-index: 1;
+  padding: 8px 0;
+  min-width: 0;
+  overflow: auto;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}

@@ -1,0 +1,94 @@
+/* TextField — Glass-stroked inputs */
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--lg-font-family);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--lg-color-text-on-surface);
+  margin-bottom: 4px;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  transition: color var(--lg-transition);
+}
+
+.labelFocused {
+  composes: label;
+  color: var(--lg-color-primary);
+}
+
+.labelError {
+  composes: label;
+  color: var(--lg-color-error);
+}
+
+.input,
+.textarea {
+  font-family: var(--lg-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  color: var(--lg-color-text-primary);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16.5px 14px;
+  border-radius: var(--lg-radius-sm);
+  outline: none;
+  background: var(--lg-surface);
+  --lg-bg-opacity: 0.06;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--lg-border);
+  transition: border-color var(--lg-transition),
+              background-color var(--lg-transition);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--lg-color-text-disabled);
+}
+
+.input:hover,
+.textarea:hover {
+  --lg-border-opacity: 0.4;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--lg-color-primary);
+  border-width: 2px;
+  padding: 15.5px 13px;
+}
+
+.inputError,
+.textareaError {
+  border-color: var(--lg-color-error);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.helper {
+  font-family: var(--lg-font-family);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--lg-color-text-on-surface-secondary);
+  margin-top: 3px;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+}
+
+.helperError {
+  composes: helper;
+  color: var(--lg-color-error);
+}

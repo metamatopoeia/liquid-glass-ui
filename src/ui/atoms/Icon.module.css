@@ -1,0 +1,23 @@
+/* Icon — Common SVG icon styles */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  font-size: 1.5rem;
+}
+
+.small {
+  composes: icon;
+  font-size: 1.25rem;
+}
+
+.inherit {
+  composes: icon;
+  font-size: inherit;
+}

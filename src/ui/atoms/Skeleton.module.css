@@ -1,0 +1,34 @@
+/* Skeleton — Glass-tinted shimmer */
+
+@keyframes glassPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.skeleton {
+  background: var(--lg-surface);
+  --lg-bg-opacity: 0.1;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: glassPulse 2s ease-in-out 0.5s infinite;
+  border-radius: var(--lg-radius-sm);
+}
+
+.text {
+  composes: skeleton;
+  height: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform-origin: 0 55%;
+}
+
+.circular {
+  composes: skeleton;
+  border-radius: 50%;
+}
+
+.rectangular {
+  composes: skeleton;
+  border-radius: var(--lg-radius-sm);
+}

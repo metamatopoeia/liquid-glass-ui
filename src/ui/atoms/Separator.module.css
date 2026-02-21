@@ -1,0 +1,19 @@
+/* Separator — Glass border color */
+
+.separator {
+  background-color: var(--lg-border);
+  border: none;
+  margin: 0;
+}
+
+.horizontal {
+  composes: separator;
+  height: 1px;
+  width: 100%;
+}
+
+.vertical {
+  composes: separator;
+  width: 1px;
+  align-self: stretch;
+}

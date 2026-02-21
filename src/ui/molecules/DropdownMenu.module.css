@@ -1,0 +1,52 @@
+/* DropdownMenu — Thick elevation glass */
+
+.content {
+  min-width: 120px;
+  border-radius: var(--lg-radius-md);
+  padding: 8px 0;
+  z-index: 1300;
+  background: var(--lg-surface);
+  --lg-blur: 40px;
+  --lg-bg-opacity: 0.25;
+  backdrop-filter: blur(var(--lg-blur));
+  -webkit-backdrop-filter: blur(var(--lg-blur));
+  border: 1px solid var(--lg-border);
+  box-shadow: var(--lg-shadow-soft);
+  animation-duration: 200ms;
+  animation-timing-function: var(--lg-easing);
+  position: relative;
+}
+
+.content::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-reflection);
+  pointer-events: none;
+}
+
+.item {
+  position: relative;
+  z-index: 1;
+  font-family: var(--lg-font-family);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 6px 16px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  color: var(--lg-color-text-primary);
+  transition: background-color var(--lg-transition-fast),
+              border-color var(--lg-transition);
+}
+
+.item[data-highlighted] {
+  background-color: rgba(255, 255, 255, 0.1);
+  --lg-border-opacity: 0.4;
+}
+
+.itemDanger {
+  composes: item;
+  color: var(--lg-color-error);
+}

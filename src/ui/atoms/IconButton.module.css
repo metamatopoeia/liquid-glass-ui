@@ -1,0 +1,47 @@
+/* IconButton — Compression + edge lensing */
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  text-decoration: none;
+  color: var(--lg-color-text-secondary);
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color var(--lg-transition),
+              transform var(--lg-transition),
+              border-color var(--lg-transition);
+  border: 1px solid transparent;
+}
+
+.iconButton:hover {
+  background-color: var(--lg-color-action-hover);
+  --lg-border-opacity: 0.4;
+  border-color: var(--lg-border);
+}
+
+.iconButton:active {
+  transform: scale(0.97);
+}
+
+.iconButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lg-border);
+}
+
+.small {
+  padding: 5px;
+}
+
+.iconButton:disabled {
+  color: var(--lg-color-text-disabled);
+  pointer-events: none;
+}

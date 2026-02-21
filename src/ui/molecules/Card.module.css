@@ -1,0 +1,63 @@
+/* Card — Regular elevation glass */
+
+.card {
+  position: relative;
+  background: var(--lg-surface);
+  backdrop-filter: blur(var(--lg-blur));
+  -webkit-backdrop-filter: blur(var(--lg-blur));
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--lg-shadow-soft), var(--lg-shadow-sharp);
+  transition: box-shadow var(--lg-transition),
+              transform var(--lg-transition);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-reflection);
+  pointer-events: none;
+}
+
+.cardOutlined {
+  composes: card;
+  border: 1px solid var(--lg-border);
+  box-shadow: var(--lg-shadow-sharp);
+  --lg-bg-opacity: 0.08;
+}
+
+.cardElevated {
+  composes: card;
+  border: 1px solid var(--lg-border);
+}
+
+.cardClickable {
+  cursor: pointer;
+}
+
+.cardClickable:active {
+  transform: scale(0.97);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 16px;
+}
+
+.content:last-child {
+  padding-bottom: 24px;
+}
+
+.media {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

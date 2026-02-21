@@ -1,0 +1,108 @@
+/* ============================================================
+   Liquid Glass — Design Tokens
+   ============================================================ */
+
+:root {
+  /* --- Liquid Glass Physics --- */
+  --lg-blur: 20px;
+  --lg-bg-opacity: 0.12;
+  --lg-border-opacity: 0.2;
+  --lg-surface: rgba(255, 255, 255, var(--lg-bg-opacity));
+  --lg-border: rgba(255, 255, 255, var(--lg-border-opacity));
+  --lg-reflection: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  --lg-easing: cubic-bezier(0.32, 0.72, 0, 1);
+  --lg-transition-duration: 400ms;
+  --lg-transition: var(--lg-transition-duration) var(--lg-easing);
+  --lg-shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.1);
+  --lg-shadow-sharp: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  /* --- Semantic Colors --- */
+  --lg-color-primary: #18181b;           /* zinc-900 */
+  --lg-color-primary-dark: #09090b;      /* zinc-950 */
+  --lg-color-primary-light: #3f3f46;     /* zinc-700 */
+  --lg-color-error: #d32f2f;
+  --lg-color-error-dark: #c62828;
+  --lg-color-error-light: #ef5350;
+  --lg-color-error-bg: #fdeded;
+  --lg-color-error-text: #5f2120;
+  --lg-color-warning-bg: #fff4e5;
+  --lg-color-warning-text: #663c00;
+  --lg-color-info-bg: #e5f6fd;
+  --lg-color-info-text: #014361;
+  --lg-color-success-bg: #edf7ed;
+  --lg-color-success-text: #1e4620;
+  --lg-color-text-primary: #18181b;      /* zinc-900 */
+  --lg-color-text-secondary: #52525b;    /* zinc-600 */
+  --lg-color-text-disabled: rgba(0, 0, 0, 0.38);
+  --lg-color-divider: rgba(0, 0, 0, 0.12);
+  --lg-color-action-hover: rgba(0, 0, 0, 0.04);
+  --lg-color-background: #fff;
+  --lg-color-paper: #fff;
+  --lg-color-chip-filled: #e4e4e7;       /* zinc-200 */
+  --lg-color-text-on-surface: #fff;
+  --lg-color-text-on-surface-secondary: #d4d4d8; /* zinc-300 */
+
+  /* --- Background --- */
+  --lg-bg-fallback: linear-gradient(
+    135deg,
+    #09090b 0%,
+    #18181b 25%,
+    #27272a 50%,
+    #3f3f46 75%,
+    #52525b 100%
+  );
+
+  /* --- Typography --- */
+  --lg-font-family: system-ui, -apple-system, sans-serif;
+
+  /* --- Radii --- */
+  --lg-radius-sm: 4px;
+  --lg-radius-md: 8px;
+  --lg-radius-lg: 16px;
+
+  /* --- Legacy Shadows (kept for non-glass elements) --- */
+  --lg-shadow-1:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  --lg-shadow-2:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  --lg-shadow-4:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+  /* --- Transitions (legacy) --- */
+  --lg-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --lg-transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Dark mode token overrides --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lg-surface: rgba(0, 0, 0, 0.35);
+    --lg-border: rgba(255, 255, 255, 0.1);
+    --lg-bg-opacity: 0.35;
+    --lg-color-text-primary: #f4f4f5;    /* zinc-100 */
+    --lg-color-text-secondary: #a1a1aa;  /* zinc-400 */
+  }
+}
+
+/* --- Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --lg-transition-duration: 0ms;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --lg-bg-opacity: 0.98;
+    --lg-blur: 0px;
+  }
+}

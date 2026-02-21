@@ -1,0 +1,56 @@
+/* Fab — Thick elevation glass */
+
+.fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  font-family: var(--lg-font-family);
+  font-weight: 500;
+  font-size: 0.875rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #fff;
+  --lg-bg-opacity: 0.25;
+  background: var(--lg-surface);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--lg-border);
+  box-shadow: var(--lg-shadow-soft),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: box-shadow var(--lg-transition),
+              transform var(--lg-transition),
+              --lg-border-opacity var(--lg-transition);
+}
+
+.fab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-reflection);
+  pointer-events: none;
+}
+
+.fab:hover {
+  --lg-bg-opacity: 0.35;
+  --lg-border-opacity: 0.4;
+  box-shadow: var(--lg-shadow-soft),
+              inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.fab:active {
+  transform: scale(0.97);
+}
+
+.fab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lg-border);
+}

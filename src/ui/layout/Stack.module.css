@@ -1,0 +1,15 @@
+/* Stack — Structural only, no glass treatment */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  composes: stack;
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}

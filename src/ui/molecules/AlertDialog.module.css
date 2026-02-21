@@ -1,0 +1,90 @@
+/* AlertDialog — Thick elevation glass (shares Dialog visual style) */
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  animation: overlayShow var(--lg-transition);
+}
+
+@keyframes overlayShow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 444px;
+  max-height: 85vh;
+  padding: 24px;
+  z-index: 1300;
+  border-radius: var(--lg-radius-lg);
+  background: var(--lg-surface);
+  --lg-blur: 40px;
+  --lg-bg-opacity: 0.25;
+  backdrop-filter: blur(var(--lg-blur));
+  -webkit-backdrop-filter: blur(var(--lg-blur));
+  border: 1px solid var(--lg-border);
+  box-shadow: var(--lg-shadow-soft);
+  animation: contentShow var(--lg-transition);
+}
+
+.content::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-reflection);
+  pointer-events: none;
+}
+
+.content:focus {
+  outline: none;
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--lg-font-family);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 0 8px;
+  color: var(--lg-color-text-primary);
+}
+
+.description {
+  position: relative;
+  z-index: 1;
+  font-family: var(--lg-font-family);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--lg-color-text-secondary);
+  margin: 0 0 20px;
+}
+
+.actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 8px;
+}

@@ -1,0 +1,21 @@
+/* Spinner — Minimal token update */
+
+@keyframes spinnerRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  color: var(--lg-color-primary);
+  animation: spinnerRotate 1.4s linear infinite;
+}
+
+.circle {
+  stroke: currentColor;
+  stroke-dasharray: 80px, 200px;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+}

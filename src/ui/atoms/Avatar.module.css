@@ -1,0 +1,34 @@
+/* Avatar — Subtle glass ring */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  background-color: #bdbdbd;
+  color: #fff;
+  flex-shrink: 0;
+  border: 1px solid var(--lg-border);
+  box-shadow: var(--lg-shadow-sharp);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+}
