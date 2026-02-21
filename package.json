@@ -18,6 +18,9 @@
     },
     "./styles.css": "./dist/index.css"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@sds-smith"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --minify"
   },
