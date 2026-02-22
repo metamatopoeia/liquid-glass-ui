@@ -29,21 +29,21 @@
 .glassThin {
   composes: glassBase;
   --lg-blur: 8px;
-  --lg-bg-opacity: 0.05;
+  --lg-bg-opacity: 0.15;
 }
 
 /* --- Elevation: Regular (cards, sidebars) --- */
 .glassRegular {
   composes: glassBase;
   --lg-blur: 20px;
-  --lg-bg-opacity: 0.12;
+  --lg-bg-opacity: 0.25;
 }
 
 /* --- Elevation: Thick (modals, popovers, menus) --- */
 .glassThick {
   composes: glassBase;
   --lg-blur: 40px;
-  --lg-bg-opacity: 0.25;
+  --lg-bg-opacity: 0.45;
 }
 
 /* --- Interaction: Stateful compression --- */
