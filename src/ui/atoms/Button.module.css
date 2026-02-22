@@ -88,8 +88,7 @@
 /* --- Outlined --- */
 .outlined {
   composes: button;
-  color: #fff;
-  mix-blend-mode: var(--lg-text-blend-mode);
+  color: var(--lg-color-primary);
   border: 1px solid var(--lg-border);
   background: transparent;
 }
@@ -106,8 +105,7 @@
 /* --- Text --- */
 .text {
   composes: button;
-  color: #fff;
-  mix-blend-mode: var(--lg-text-blend-mode);
+  color: var(--lg-color-primary);
   background-color: transparent;
 }
 

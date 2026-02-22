@@ -16,20 +16,19 @@
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
-  color: #fff;
-  mix-blend-mode: var(--lg-text-blend-mode);
+  color: var(--lg-color-text-secondary);
   outline: none;
   transition: color var(--lg-transition),
               border-color var(--lg-transition);
 }
 
 .trigger:hover {
-  color: #fff;
+  color: var(--lg-color-primary);
 }
 
 .trigger[data-state='active'] {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: var(--lg-color-primary);
+  border-bottom-color: var(--lg-color-primary);
 }
 
 .trigger:focus-visible {

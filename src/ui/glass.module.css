@@ -11,14 +11,13 @@
   -webkit-backdrop-filter: blur(var(--lg-blur));
   border: 1px solid var(--lg-border);
   box-shadow: var(--lg-shadow-soft), var(--lg-shadow-sharp);
-  transition:
-    transform var(--lg-transition),
-    box-shadow var(--lg-transition),
-    border-color var(--lg-transition);
+  transition: transform var(--lg-transition),
+              box-shadow var(--lg-transition),
+              border-color var(--lg-transition);
 }
 
 .glassBase::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -62,12 +61,4 @@
 .glassFocus:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--lg-border);
-}
-
-/* --- Text legibility over variable backgrounds (§5) --- */
-/* mix-blend-mode: difference with #fff mathematically produces near-black over light
-   backgrounds and near-white over dark backgrounds — equivalent to zinc-900/zinc-100. */
-.glassText {
-  color: #fff;
-  mix-blend-mode: var(--lg-text-blend-mode);
 }

@@ -45,8 +45,6 @@
   position: relative;
   z-index: 1;
   padding: 16px;
-  mix-blend-mode: var(--lg-text-blend-mode);
-  color: #fff;
 }
 
 .content:last-child {

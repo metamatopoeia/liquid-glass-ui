@@ -13,7 +13,7 @@
   max-width: 600px;
   z-index: 1100;
   color: #fff;
-  mix-blend-mode: var(--lg-text-blend-mode);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   background: var(--lg-surface);
   --lg-blur: 30px;
   --lg-bg-opacity: 0.18;
