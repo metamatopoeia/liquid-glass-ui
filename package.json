@@ -35,7 +35,8 @@
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --minify",
     "test": "npm run type-check && npm run build-verify",
     "type-check": "tsc --noEmit",
-    "build-verify": "tsc && ls dist/index.d.ts"
+    "build-verify": "tsc && ls dist/index.d.ts",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": ">=18",
