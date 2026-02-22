@@ -16,7 +16,7 @@
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
-  color: var(--lg-color-text-primary);
+  color: #fff;
   mix-blend-mode: var(--lg-text-blend-mode);
   outline: none;
   transition: color var(--lg-transition),
@@ -24,12 +24,12 @@
 }
 
 .trigger:hover {
-  color: var(--lg-color-text-primary);
+  color: #fff;
 }
 
 .trigger[data-state='active'] {
-  color: var(--lg-color-text-primary);
-  border-bottom-color: var(--lg-color-text-primary);
+  color: #fff;
+  border-bottom-color: #fff;
 }
 
 .trigger:focus-visible {

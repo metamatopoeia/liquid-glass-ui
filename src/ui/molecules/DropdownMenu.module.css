@@ -36,7 +36,7 @@
   cursor: pointer;
   outline: none;
   user-select: none;
-  color: var(--lg-color-text-primary);
+  color: #fff;
   mix-blend-mode: var(--lg-text-blend-mode);
   transition: background-color var(--lg-transition-fast),
               border-color var(--lg-transition);

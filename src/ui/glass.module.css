@@ -65,9 +65,9 @@
 }
 
 /* --- Text legibility over variable backgrounds (§5) --- */
-/* mix-blend-mode: exclusion shifts text contrast relative to the background,
-   keeping zinc-900/zinc-100 readable over both light and dark areas of a background image. */
+/* mix-blend-mode: difference with #fff mathematically produces near-black over light
+   backgrounds and near-white over dark backgrounds — equivalent to zinc-900/zinc-100. */
 .glassText {
-  color: var(--lg-color-text-primary);
+  color: #fff;
   mix-blend-mode: var(--lg-text-blend-mode);
 }

@@ -64,7 +64,7 @@
   min-width: 0;
   overflow: auto;
   mix-blend-mode: var(--lg-text-blend-mode);
-  color: var(--lg-color-text-primary);
+  color: #fff;
 }
 
 .title {

@@ -66,7 +66,7 @@
   font-size: 1.25rem;
   line-height: 1.6;
   margin: 0 0 8px;
-  color: var(--lg-color-text-primary);
+  color: #fff;
   mix-blend-mode: var(--lg-text-blend-mode);
 }
 
@@ -76,7 +76,7 @@
   font-family: var(--lg-font-family);
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--lg-color-text-secondary);
+  color: #fff;
   mix-blend-mode: var(--lg-text-blend-mode);
   margin: 0 0 20px;
 }

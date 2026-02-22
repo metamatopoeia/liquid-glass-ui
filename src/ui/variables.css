@@ -60,7 +60,7 @@
 
   /* --- Typography --- */
   --lg-font-family: system-ui, -apple-system, sans-serif;
-  --lg-text-blend-mode: exclusion;
+  --lg-text-blend-mode: difference;
 
   /* --- Radii --- */
   --lg-radius-sm: 4px;

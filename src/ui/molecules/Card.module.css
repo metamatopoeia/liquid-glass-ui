@@ -46,7 +46,7 @@
   z-index: 1;
   padding: 16px;
   mix-blend-mode: var(--lg-text-blend-mode);
-  color: var(--lg-color-text-primary);
+  color: #fff;
 }
 
 .content:last-child {
