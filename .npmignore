@@ -1,0 +1,9 @@
+# Exclude source code and config from the package
+src/
+public/
+.babelrc
+webpack.config.js
+tsconfig.json
+.vscode/
+
+# DO NOT put dist/ or build/ here
