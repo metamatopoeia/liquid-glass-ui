@@ -1,15 +1,25 @@
 {
   "name": "@sds-smith/liquid-glass-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React UI library for building liquid glass interfaces.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "bin"],
-  "keywords": ["liquid-glass", "ui", "react", "library"],
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "keywords": [
+    "liquid-glass",
+    "ui",
+    "react",
+    "library"
+  ],
   "author": "Shawn D Smith",
   "license": "ISC",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
