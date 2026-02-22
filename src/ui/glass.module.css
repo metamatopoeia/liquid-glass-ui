@@ -11,13 +11,14 @@
   -webkit-backdrop-filter: blur(var(--lg-blur));
   border: 1px solid var(--lg-border);
   box-shadow: var(--lg-shadow-soft), var(--lg-shadow-sharp);
-  transition: transform var(--lg-transition),
-              box-shadow var(--lg-transition),
-              border-color var(--lg-transition);
+  transition:
+    transform var(--lg-transition),
+    box-shadow var(--lg-transition),
+    border-color var(--lg-transition);
 }
 
 .glassBase::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -61,4 +62,12 @@
 .glassFocus:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--lg-border);
+}
+
+/* --- Text legibility over variable backgrounds (§5) --- */
+/* mix-blend-mode: exclusion shifts text contrast relative to the background,
+   keeping zinc-900/zinc-100 readable over both light and dark areas of a background image. */
+.glassText {
+  color: var(--lg-color-text-primary);
+  mix-blend-mode: var(--lg-text-blend-mode);
 }

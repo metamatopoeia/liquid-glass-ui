@@ -67,6 +67,7 @@
   line-height: 1.6;
   margin: 0 0 8px;
   color: var(--lg-color-text-primary);
+  mix-blend-mode: var(--lg-text-blend-mode);
 }
 
 .description {
@@ -76,6 +77,7 @@
   font-size: 1rem;
   line-height: 1.5;
   color: var(--lg-color-text-secondary);
+  mix-blend-mode: var(--lg-text-blend-mode);
   margin: 0 0 20px;
 }
 

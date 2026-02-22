@@ -63,6 +63,8 @@
   padding: 8px 0;
   min-width: 0;
   overflow: auto;
+  mix-blend-mode: var(--lg-text-blend-mode);
+  color: var(--lg-color-text-primary);
 }
 
 .title {

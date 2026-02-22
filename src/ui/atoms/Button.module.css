@@ -89,6 +89,7 @@
 .outlined {
   composes: button;
   color: var(--lg-color-primary);
+  mix-blend-mode: var(--lg-text-blend-mode);
   border: 1px solid var(--lg-border);
   background: transparent;
 }
@@ -106,6 +107,7 @@
 .text {
   composes: button;
   color: var(--lg-color-primary);
+  mix-blend-mode: var(--lg-text-blend-mode);
   background-color: transparent;
 }
 

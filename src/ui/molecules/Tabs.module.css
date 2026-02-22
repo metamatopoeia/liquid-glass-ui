@@ -16,19 +16,20 @@
   border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
-  color: var(--lg-color-text-secondary);
+  color: var(--lg-color-text-primary);
+  mix-blend-mode: var(--lg-text-blend-mode);
   outline: none;
   transition: color var(--lg-transition),
               border-color var(--lg-transition);
 }
 
 .trigger:hover {
-  color: var(--lg-color-primary);
+  color: var(--lg-color-text-primary);
 }
 
 .trigger[data-state='active'] {
-  color: var(--lg-color-primary);
-  border-bottom-color: var(--lg-color-primary);
+  color: var(--lg-color-text-primary);
+  border-bottom-color: var(--lg-color-text-primary);
 }
 
 .trigger:focus-visible {
