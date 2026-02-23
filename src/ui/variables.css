@@ -31,12 +31,6 @@
   --lg-color-error-light: #ef5350;
   --lg-color-error-bg: #fdeded;
   --lg-color-error-text: #5f2120;
-  --lg-color-warning-bg: #fff4e5;
-  --lg-color-warning-text: #663c00;
-  --lg-color-info-bg: #e5f6fd;
-  --lg-color-info-text: #014361;
-  --lg-color-success-bg: #edf7ed;
-  --lg-color-success-text: #1e4620;
   --lg-color-text-primary: #18181b;      /* zinc-900 */
   --lg-color-text-secondary: #52525b;    /* zinc-600 */
   --lg-color-text-disabled: rgba(0, 0, 0, 0.38);
@@ -88,7 +82,7 @@
     --lg-surface: rgba(0, 0, 0, 0.35);
     --lg-border: rgba(255, 255, 255, 0.1);
     --lg-bg-opacity: 0.35;
-    --lg-color-text-primary: #f4f4f5;    /* zinc-100 */
+  --lg-color-text-primary: #f4f4f5;    /* zinc-100 */
     --lg-color-text-secondary: #a1a1aa;  /* zinc-400 */
   }
 }
