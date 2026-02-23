@@ -4,9 +4,9 @@
 
 :root {
   /* --- Liquid Glass Physics --- */
-  --lg-blur: 8px;
-  --lg-bg-opacity: 0.15;
-  --lg-border-opacity: 0.15;
+  --lg-blur: 12px;
+  --lg-bg-opacity: 0.25;
+  --lg-border-opacity: 0.25;
   --lg-surface: rgba(255, 255, 255, var(--lg-bg-opacity));
   --lg-border: rgba(255, 255, 255, var(--lg-border-opacity));
   --lg-reflection: linear-gradient(

@@ -28,21 +28,21 @@
 /* --- Elevation: Thin (toolbars, separators) --- */
 .glassThin {
   composes: glassBase;
-  --lg-blur: 8px;
+  --lg-blur: 4px;
   --lg-bg-opacity: 0.15;
 }
 
 /* --- Elevation: Regular (cards, sidebars) --- */
 .glassRegular {
   composes: glassBase;
-  --lg-blur: 20px;
+  --lg-blur: 12px;
   --lg-bg-opacity: 0.25;
 }
 
 /* --- Elevation: Thick (modals, popovers, menus) --- */
 .glassThick {
   composes: glassBase;
-  --lg-blur: 40px;
+  --lg-blur: 24px;
   --lg-bg-opacity: 0.45;
 }
 
