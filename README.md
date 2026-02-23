@@ -25,8 +25,8 @@ npm install liquid-glass-ui
 Import the stylesheet once at your app's entry point, then use any component:
 
 ```tsx
-import 'liquid-glass-ui/styles.css';
-import { Button, Card, CardContent, ThemeProvider } from 'liquid-glass-ui';
+import "liquid-glass-ui/styles.css";
+import { Button, Card, CardContent, ThemeProvider } from "liquid-glass-ui";
 
 function App() {
   return (
@@ -48,44 +48,34 @@ function App() {
 
 ### Atoms
 
-| Component | Description |
-| :--- | :--- |
-| `Alert` | Glass surface with tinted background per severity (`error`, `warning`, `info`, `success`) |
-| `Avatar` | Radix Avatar with glass fallback |
-| `Button` | Contained, outlined, and text variants with glass hover/focus states |
-| `Chip` | Thin glass chip — `filled` or `outlined` |
-| `CollapsibleRoot` / `CollapsibleContent` | Radix Collapsible with animated content |
-| `Fab` | Floating action button with thick glass blur |
-| `IconButton` | Circular icon button with glass hover ring |
-| `Separator` | Radix Separator — horizontal or vertical divider |
-| `Skeleton` | Glass-pulsing placeholder — `text`, `circular`, or `rectangular` |
-| `Spinner` | Animated SVG spinner |
-
-### Icons
-
-`AddIcon` · `CameraAltIcon` · `CloudUploadIcon` · `DeleteIcon` · `MoreVertIcon` · `PhotoLibraryIcon`
+| Component    | Description                                                          |
+| :----------- | :------------------------------------------------------------------- |
+| `Avatar`     | Radix Avatar with glass fallback                                     |
+| `Button`     | Contained, outlined, and text variants with glass hover/focus states |
+| `Chip`       | Thin glass chip — `filled` or `outlined`                             |
+| `Fab`        | Floating action button with thick glass blur                         |
+| `IconButton` | Circular icon button with glass hover ring                           |
+| `Separator`  | Radix Separator — horizontal or vertical divider                     |
+| `Skeleton`   | Glass-pulsing placeholder — `text`, `circular`, or `rectangular`     |
+| `Spinner`    | Animated SVG spinner                                                 |
 
 ### Molecules
 
-| Component | Description |
-| :--- | :--- |
-| `AlertDialog` | Radix AlertDialog with thick glass overlay (`AlertDialogRoot`, `AlertDialogTrigger`, `AlertDialogContent`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogActions`, `AlertDialogCancel`, `AlertDialogAction`) |
-| `Card` / `CardContent` / `CardMedia` | Glass card with media and content slots |
-| `CommentInput` | Inline text input with submit button |
-| `Dialog` | Radix Dialog with thick glass overlay (`DialogRoot`, `DialogTrigger`, `DialogContent`, `DialogTitle`, `DialogDescription`, `DialogActions`, `DialogClose`) |
-| `DropdownMenu` | Radix DropdownMenu with glass content (`DropdownMenuRoot`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem`) |
-| `Select` | Radix Select with glass trigger and dropdown |
-| `Tabs` | Radix Tabs with glass-accented triggers (`TabsRoot`, `TabsList`, `TabsTrigger`, `TabsContent`) |
-| `TextField` | Input/textarea with glass stroke, floating label, and helper text |
+| Component                            | Description                                                                                                                                                                                                              |
+| :----------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AlertDialog`                        | Radix AlertDialog with thick glass overlay (`AlertDialogRoot`, `AlertDialogTrigger`, `AlertDialogContent`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogActions`, `AlertDialogCancel`, `AlertDialogAction`) |
+| `Card` / `CardContent` / `CardMedia` | Glass card with media and content slots                                                                                                                                                                                  |
+| `Dialog`                             | Radix Dialog with thick glass overlay (`DialogRoot`, `DialogTrigger`, `DialogContent`, `DialogTitle`, `DialogDescription`, `DialogActions`, `DialogClose`)                                                               |
+| `DropdownMenu`                       | Radix DropdownMenu with glass content (`DropdownMenuRoot`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem`)                                                                                             |
+| `Select`                             | Radix Select with glass trigger and dropdown                                                                                                                                                                             |
+| `TextField`                          | Input/textarea with glass stroke, floating label, and helper text                                                                                                                                                        |
 
 ### Layout
 
-| Component | Description |
-| :--- | :--- |
-| `AppBar` | Fixed top bar with glass blur |
-| `Container` | Centered max-width wrapper |
-| `Paper` | Glass elevation surface — `thin`, `regular`, or `thick` |
-| `Stack` | Flexbox stack with direction, spacing, and wrap |
+| Component | Description                                             |
+| :-------- | :------------------------------------------------------ |
+| `AppBar`  | Fixed top bar with glass blur                           |
+| `Paper`   | Glass elevation surface — `thin`, `regular`, or `thick` |
 
 ## Theming
 
@@ -95,8 +85,8 @@ All design tokens are exposed as `--lg-*` CSS variables on `:root`. Override the
 
 ```css
 :root {
-  --lg-color-primary: #6366f1;       /* indigo-500 */
-  --lg-color-primary-dark: #4338ca;  /* indigo-700 */
+  --lg-color-primary: #6366f1; /* indigo-500 */
+  --lg-color-primary-dark: #4338ca; /* indigo-700 */
   --lg-blur: 24px;
   --lg-radius-md: 12px;
 }
@@ -107,14 +97,14 @@ All design tokens are exposed as `--lg-*` CSS variables on `:root`. Override the
 For runtime overrides, wrap your app in `ThemeProvider` and pass a partial theme object. Values are injected as inline CSS variables on a wrapper `<div>`:
 
 ```tsx
-import { ThemeProvider } from 'liquid-glass-ui';
-import type { LiquidGlassTheme } from 'liquid-glass-ui';
+import { ThemeProvider } from "liquid-glass-ui";
+import type { LiquidGlassTheme } from "liquid-glass-ui";
 
 const theme: Partial<LiquidGlassTheme> = {
-  colorPrimary: '#6366f1',
-  colorPrimaryDark: '#4338ca',
-  blur: '24px',
-  radiusMd: '12px',
+  colorPrimary: "#6366f1",
+  colorPrimaryDark: "#4338ca",
+  blur: "24px",
+  radiusMd: "12px",
 };
 
 function App() {
@@ -131,7 +121,7 @@ function App() {
 Access the current theme context from any child component:
 
 ```tsx
-import { useTheme } from 'liquid-glass-ui';
+import { useTheme } from "liquid-glass-ui";
 
 function MyComponent() {
   const { theme } = useTheme();
@@ -141,11 +131,11 @@ function MyComponent() {
 
 ### Glass Elevation Map
 
-| Level | Blur | Opacity | Use Case |
-| :--- | :--- | :--- | :--- |
-| Thin | `8px` | `0.05` | Background toolbars, subtle separators |
-| Regular | `20px` | `0.12` | Standard cards, sidebar navigation |
-| Thick | `40px` | `0.25` | Modals, popovers, action menus |
+| Level   | Blur   | Opacity | Use Case                               |
+| :------ | :----- | :------ | :------------------------------------- |
+| Thin    | `8px`  | `0.05`  | Background toolbars, subtle separators |
+| Regular | `20px` | `0.12`  | Standard cards, sidebar navigation     |
+| Thick   | `40px` | `0.25`  | Modals, popovers, action menus         |
 
 ### Dark Mode
 
@@ -161,28 +151,28 @@ Dark mode tokens activate automatically via `prefers-color-scheme: dark`. The su
 <details>
 <summary>Full list of CSS variables</summary>
 
-| Token | Default | Description |
-| :--- | :--- | :--- |
-| `--lg-blur` | `20px` | Backdrop blur radius |
-| `--lg-bg-opacity` | `0.12` | Surface background opacity |
-| `--lg-border-opacity` | `0.2` | Border opacity |
-| `--lg-surface` | `rgba(255,255,255, var(--lg-bg-opacity))` | Surface background |
-| `--lg-border` | `rgba(255,255,255, var(--lg-border-opacity))` | Border color |
-| `--lg-reflection` | linear-gradient | Specular highlight gradient |
-| `--lg-easing` | `cubic-bezier(0.32, 0.72, 0, 1)` | Spring easing curve |
-| `--lg-transition-duration` | `400ms` | Global transition duration |
-| `--lg-shadow-soft` | `0 20px 50px rgba(0,0,0,0.1)` | Soft drop shadow |
-| `--lg-shadow-sharp` | `0 1px 2px rgba(0,0,0,0.05)` | Sharp drop shadow |
-| `--lg-color-primary` | `#18181b` | Primary color (zinc-900) |
-| `--lg-color-primary-dark` | `#09090b` | Primary dark (zinc-950) |
-| `--lg-color-primary-light` | `#3f3f46` | Primary light (zinc-700) |
-| `--lg-color-text-primary` | `#18181b` | Primary text color |
-| `--lg-color-text-secondary` | `#52525b` | Secondary text color |
-| `--lg-color-background` | `#fff` | Page background |
-| `--lg-font-family` | `system-ui, -apple-system, sans-serif` | Font stack |
-| `--lg-radius-sm` | `4px` | Small border radius |
-| `--lg-radius-md` | `8px` | Medium border radius |
-| `--lg-radius-lg` | `16px` | Large border radius |
+| Token                       | Default                                       | Description                 |
+| :-------------------------- | :-------------------------------------------- | :-------------------------- |
+| `--lg-blur`                 | `20px`                                        | Backdrop blur radius        |
+| `--lg-bg-opacity`           | `0.12`                                        | Surface background opacity  |
+| `--lg-border-opacity`       | `0.2`                                         | Border opacity              |
+| `--lg-surface`              | `rgba(255,255,255, var(--lg-bg-opacity))`     | Surface background          |
+| `--lg-border`               | `rgba(255,255,255, var(--lg-border-opacity))` | Border color                |
+| `--lg-reflection`           | linear-gradient                               | Specular highlight gradient |
+| `--lg-easing`               | `cubic-bezier(0.32, 0.72, 0, 1)`              | Spring easing curve         |
+| `--lg-transition-duration`  | `400ms`                                       | Global transition duration  |
+| `--lg-shadow-soft`          | `0 20px 50px rgba(0,0,0,0.1)`                 | Soft drop shadow            |
+| `--lg-shadow-sharp`         | `0 1px 2px rgba(0,0,0,0.05)`                  | Sharp drop shadow           |
+| `--lg-color-primary`        | `#18181b`                                     | Primary color (zinc-900)    |
+| `--lg-color-primary-dark`   | `#09090b`                                     | Primary dark (zinc-950)     |
+| `--lg-color-primary-light`  | `#3f3f46`                                     | Primary light (zinc-700)    |
+| `--lg-color-text-primary`   | `#18181b`                                     | Primary text color          |
+| `--lg-color-text-secondary` | `#52525b`                                     | Secondary text color        |
+| `--lg-color-background`     | `#fff`                                        | Page background             |
+| `--lg-font-family`          | `system-ui, -apple-system, sans-serif`        | Font stack                  |
+| `--lg-radius-sm`            | `4px`                                         | Small border radius         |
+| `--lg-radius-md`            | `8px`                                         | Medium border radius        |
+| `--lg-radius-lg`            | `16px`                                        | Large border radius         |
 
 </details>
 
@@ -214,4 +204,3 @@ npm run build
 ## License
 
 ISC
-
