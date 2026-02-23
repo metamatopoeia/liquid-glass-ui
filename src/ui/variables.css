@@ -4,7 +4,7 @@
 
 :root {
   /* --- Liquid Glass Physics --- */
-  --lg-blur: 20px;
+  --lg-blur: 12px;
   --lg-bg-opacity: 0.25;
   --lg-border-opacity: 0.2;
   --lg-surface: rgba(255, 255, 255, var(--lg-bg-opacity));
