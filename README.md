@@ -2,6 +2,10 @@
 
 A React component library for building interfaces with translucent, depth-aware surfaces inspired by Apple's Liquid Glass design language. Built on [Radix UI](https://www.radix-ui.com/) primitives, styled with CSS Variables and CSS Modules, and bundled with [tsup](https://tsup.egoist.dev/).
 
+[![npm version](https://badge.fury.io/js/liquid-glass-ui.svg)](https://badge.fury.io/js/liquid-glass-ui)
+![No Pull Requests](https://img.shields.io/badge/PRs-not_accepted-red.svg)
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ## Features
 
 - **Liquid Glass physics** — backdrop blur, refraction, specular reflections, and viscosity transitions driven entirely by CSS variables
@@ -201,6 +205,15 @@ npm run build
 - **tsup** — zero-config bundler powered by esbuild
 - **TypeScript** — strict mode, full declaration output
 
+## Community & Legal
+
+To maintain the specific architectural and visual direction of this library, **this project does not accept Pull Requests.**
+
+* **Found a bug?** Please open an [Issue](https://github.com/sds-smith/liquid-glass-ui/issues).
+* **Want to contribute?** See our [Contributing Guide](.github/CONTRIBUTING.md).
+* **Security Issues?** Please refer to our [Security Policy](.github/SECURITY.md).
+* **Code of Conduct?** Read our [standards of behavior](.github/CODE_OF_CONDUCT.md).
+
 ## License
 
-ISC
+[MIT](LICENSE) © [Shawn D Smith](https://github.com/sds-smith)

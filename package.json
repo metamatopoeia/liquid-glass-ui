@@ -2,23 +2,32 @@
   "name": "@sds-smith/liquid-glass-ui",
   "version": "1.0.9",
   "description": "A React UI library for building liquid glass interfaces.",
+  "author": "Shawn D Smith",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sds-smith/liquid-glass-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sds-smith/liquid-glass-ui/issues"
+  },
+  "homepage": "https://github.com/sds-smith/liquid-glass-ui#readme",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "bin"
+    "dist"
   ],
   "keywords": [
     "liquid-glass",
     "ui",
     "react",
-    "library"
+    "library",
+    "design-system"
   ],
-  "author": "Shawn D Smith",
-  "license": "ISC",
   "sideEffects": [
-    "*.css"
+    "./dist/index.css",
+    "**/*.css"
   ],
   "exports": {
     ".": {
@@ -28,15 +37,11 @@
     },
     "./styles.css": "./dist/index.css"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@sds-smith"
-  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --minify",
-    "test": "npm run type-check && npm run build-verify",
+    "test": "npm run type-check",
     "type-check": "tsc --noEmit",
-    "build-verify": "tsc && ls dist/index.d.ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -53,9 +58,11 @@
     "@radix-ui/react-tabs": "^1.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
