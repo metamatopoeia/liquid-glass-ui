@@ -1,6 +1,6 @@
 {
   "name": "@sds-smith/liquid-glass-ui",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A React UI library for building liquid glass interfaces.",
   "author": "Shawn D Smith",
   "license": "MIT",
