@@ -1,22 +1,28 @@
 /* --- Global CSS (side-effect) --- */
-import './ui/variables.css';
+import "./ui/variables.css";
 
 /* --- Theme --- */
-export { default as ThemeProvider, useTheme } from './theme/ThemeProvider';
-export type { LiquidGlassTheme, ThemeTokenKey } from './theme/types';
+export * from "./theme/ThemeProvider";
+export type { LiquidGlassTheme, ThemeTokenKey } from "./theme/types";
 
-/* --- Atoms --- */
-export { default as Avatar } from './ui/atoms/Avatar';
-export { default as Button } from './ui/atoms/Button';
-export { default as Chip } from './ui/atoms/Chip';
-export { default as Fab } from './ui/atoms/Fab';
-export { default as IconButton } from './ui/atoms/IconButton';
-export { default as Separator } from './ui/atoms/Separator';
-export { default as Skeleton } from './ui/atoms/Skeleton';
-export { default as Spinner } from './ui/atoms/Spinner';
+/* --- Inputs --- */
+export { default as Button } from "./ui/inputs/Button";
+export { default as Fab } from "./ui/inputs/Fab";
+export { default as IconButton } from "./ui/inputs/IconButton";
+export { default as Select } from "./ui/inputs/Select";
+export { default as TextField } from "./ui/inputs/TextField";
 
+/* --- Surfaces --- */
+export { default as AppBar } from "./ui/surfaces/AppBar";
+export { default as Card, CardContent, CardMedia } from "./ui/surfaces/Card";
+export { default as Paper } from "./ui/surfaces/Paper";
 
-/* --- Molecules --- */
+/* --- Data Display --- */
+export { default as Avatar } from "./ui/data-display/Avatar";
+export { default as Chip } from "./ui/data-display/Chip";
+export { default as Separator } from "./ui/data-display/Separator";
+
+/* --- Feedback --- */
 export {
   AlertDialogRoot,
   AlertDialogTrigger,
@@ -26,8 +32,7 @@ export {
   AlertDialogActions,
   AlertDialogCancel,
   AlertDialogAction,
-} from './ui/molecules/AlertDialog';
-export { default as Card, CardContent, CardMedia } from './ui/molecules/Card';
+} from "./ui/feedback/AlertDialog";
 export {
   DialogRoot,
   DialogTrigger,
@@ -36,18 +41,14 @@ export {
   DialogDescription,
   DialogActions,
   DialogClose,
-} from './ui/molecules/Dialog';
+} from "./ui/feedback/Dialog";
+export { default as Skeleton } from "./ui/feedback/Skeleton";
+export { default as Spinner } from "./ui/feedback/Spinner";
+
+/* --- Navigation --- */
 export {
   DropdownMenuRoot,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from './ui/molecules/DropdownMenu';
-export { default as Select } from './ui/molecules/Select';
-export { default as TextField } from './ui/molecules/TextField';
-
-/* --- Organisms --- */
-export { default as AppBar } from './ui/organisms/AppBar';
-
-/* --- Layout --- */
-export { default as Paper } from './ui/layout/Paper';
+} from "./ui/navigation/DropdownMenu";
