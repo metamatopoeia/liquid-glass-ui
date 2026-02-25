@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode, useMemo } from 'react';
+import { useComponentOverrides } from '../../../theme/useComponentOverrides';
 import s from './Button.module.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,19 +25,23 @@ export default function Button({
   startIcon,
   className = '',
   children,
+  style,
   ...rest
 }: ButtonProps) {
+  const ownerState = useMemo(() => ({ variant, color, size, fullWidth }), [variant, color, size, fullWidth]);
+  const overrides = useComponentOverrides('Button', ownerState, { className, style });
+
   const classes = [
     variantMap[variant]?.[color] ?? s.text,
     size === 'small' ? s.small : '',
     fullWidth ? s.fullWidth : '',
-    className,
+    overrides.className,
   ]
     .filter(Boolean)
     .join(' ');
 
   return (
-    <button className={classes} {...rest}>
+    <button className={classes} style={overrides.style} {...rest}>
       {startIcon && <span className={s.startIcon}>{startIcon}</span>}
       {children}
     </button>

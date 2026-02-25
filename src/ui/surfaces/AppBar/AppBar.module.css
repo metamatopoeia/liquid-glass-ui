@@ -14,14 +14,14 @@
   z-index: 1100;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  background: var(--lg-surface);
-  --lg-blur: 30px;
-  --lg-bg-opacity: 0.18;
-  backdrop-filter: blur(var(--lg-blur));
-  -webkit-backdrop-filter: blur(var(--lg-blur));
-  border: 1px solid var(--lg-border);
+  background: var(--lg-glass-surface);
+  --lg-glass-blur: 30px;
+  --lg-glass-bg-opacity: 0.18;
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  border: 1px solid var(--lg-glass-border);
   border-radius: 24px;
-  box-shadow: var(--lg-shadow-soft);
+  box-shadow: var(--lg-glass-shadow-soft);
 }
 
 .appBar::after {
@@ -29,7 +29,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--lg-reflection);
+  background: var(--lg-glass-reflection);
   pointer-events: none;
 }
 

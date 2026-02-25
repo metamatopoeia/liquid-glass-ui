@@ -5,7 +5,7 @@
   position: fixed;
   inset: 0;
   z-index: 1200;
-  animation: overlayShow var(--lg-transition);
+  animation: overlayShow var(--lg-glass-transition);
 }
 
 @keyframes overlayShow {
@@ -24,14 +24,14 @@
   padding: 24px;
   z-index: 1300;
   border-radius: var(--lg-radius-lg);
-  background: var(--lg-surface);
-  --lg-blur: 40px;
-  --lg-bg-opacity: 0.25;
-  backdrop-filter: blur(var(--lg-blur));
-  -webkit-backdrop-filter: blur(var(--lg-blur));
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-soft);
-  animation: contentShow var(--lg-transition);
+  background: var(--lg-glass-surface);
+  --lg-glass-blur: 40px;
+  --lg-glass-bg-opacity: 0.25;
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft);
+  animation: contentShow var(--lg-glass-transition);
 }
 
 .content::after {
@@ -39,7 +39,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--lg-reflection);
+  background: var(--lg-glass-reflection);
   pointer-events: none;
 }
 
@@ -61,21 +61,21 @@
 .title {
   position: relative;
   z-index: 1;
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.6;
   margin: 0 0 8px;
-  color: var(--lg-color-text-primary);
+  color: var(--lg-palette-text-primary);
 }
 
 .description {
   position: relative;
   z-index: 1;
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--lg-color-text-secondary);
+  color: var(--lg-palette-text-secondary);
   margin: 0 0 20px;
 }
 

@@ -13,8 +13,8 @@
   background-color: #bdbdbd;
   color: #fff;
   flex-shrink: 0;
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-sharp);
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-sharp);
 }
 
 .image {

@@ -13,19 +13,19 @@
   user-select: none;
   vertical-align: middle;
   text-decoration: none;
-  color: var(--lg-color-text-secondary);
+  color: var(--lg-palette-text-secondary);
   padding: 8px;
   border-radius: 50%;
-  transition: background-color var(--lg-transition),
-              transform var(--lg-transition),
-              border-color var(--lg-transition);
+  transition: background-color var(--lg-glass-transition),
+              transform var(--lg-glass-transition),
+              border-color var(--lg-glass-transition);
   border: 1px solid transparent;
 }
 
 .iconButton:hover {
-  background-color: var(--lg-color-action-hover);
-  --lg-border-opacity: 0.4;
-  border-color: var(--lg-border);
+  background-color: var(--lg-palette-action-hover);
+  --lg-glass-border-opacity: 0.4;
+  border-color: var(--lg-glass-border);
 }
 
 .iconButton:active {
@@ -34,7 +34,7 @@
 
 .iconButton:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--lg-border);
+  box-shadow: 0 0 0 2px var(--lg-glass-border);
 }
 
 .small {
@@ -42,6 +42,6 @@
 }
 
 .iconButton:disabled {
-  color: var(--lg-color-text-disabled);
+  color: var(--lg-palette-text-disabled);
   pointer-events: none;
 }

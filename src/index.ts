@@ -1,9 +1,50 @@
 /* --- Global CSS (side-effect) --- */
 import "./ui/variables.css";
 
-/* --- Theme --- */
-export * from "./theme/ThemeProvider";
-export type { LiquidGlassTheme, ThemeTokenKey } from "./theme/types";
+/* --- Theme Engine --- */
+export { default as ThemeProvider } from "./theme/ThemeProvider";
+export { createTheme } from "./theme/createTheme";
+export { useTheme } from "./theme/useTheme";
+export { useColorScheme } from "./theme/useColorScheme";
+export { useComponentOverrides } from "./theme/useComponentOverrides";
+
+/* --- Theme Types --- */
+export type {
+  LiquidGlassTheme,
+  LiquidGlassThemeInput,
+  ThemePalette,
+  PaletteColor,
+  StatusColor,
+  GlassTokens,
+  ThemeTypography,
+  ThemeRadius,
+  ThemeShadows,
+  ThemeTransitions,
+  ThemeSpacing,
+  CallableSpacing,
+  ThemeZIndex,
+  ComponentStyleOverride,
+  ComponentName,
+  DeepPartial,
+  ThemeVars,
+  ThemeTokenKey,
+  ButtonSlot,
+  CardSlot,
+  AppBarSlot,
+  PaperSlot,
+  DialogSlot,
+  AlertDialogSlot,
+  SelectSlot,
+  TextFieldSlot,
+  ChipSlot,
+  AvatarSlot,
+  FabSlot,
+  IconButtonSlot,
+  SeparatorSlot,
+  SkeletonSlot,
+  SpinnerSlot,
+  DropdownMenuSlot,
+} from "./theme/types";
 
 /* --- Inputs --- */
 export { default as Button } from "./ui/inputs/Button/Button";

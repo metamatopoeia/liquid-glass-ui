@@ -10,40 +10,40 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--lg-reflection);
+  background: var(--lg-glass-reflection);
   pointer-events: none;
 }
 
 /* Thin — toolbars, subtle surfaces */
 .elevation1 {
   composes: paper;
-  background: var(--lg-surface);
-  --lg-blur: 8px;
-  --lg-bg-opacity: 0.05;
-  backdrop-filter: blur(var(--lg-blur));
-  -webkit-backdrop-filter: blur(var(--lg-blur));
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-sharp);
+  background: var(--lg-glass-surface);
+  --lg-glass-blur: 8px;
+  --lg-glass-bg-opacity: 0.05;
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-sharp);
 }
 
 /* Regular — standard cards, panels */
 .elevation2 {
   composes: paper;
-  background: var(--lg-surface);
-  --lg-blur: 20px;
-  --lg-bg-opacity: 0.12;
-  backdrop-filter: blur(var(--lg-blur));
-  -webkit-backdrop-filter: blur(var(--lg-blur));
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-soft), var(--lg-shadow-sharp);
+  background: var(--lg-glass-surface);
+  --lg-glass-blur: 20px;
+  --lg-glass-bg-opacity: 0.12;
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft), var(--lg-glass-shadow-sharp);
 }
 
 .outlined {
   composes: paper;
-  background: var(--lg-surface);
-  --lg-bg-opacity: 0.06;
+  background: var(--lg-glass-surface);
+  --lg-glass-bg-opacity: 0.06;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--lg-border);
+  border: 1px solid var(--lg-glass-border);
   box-shadow: none;
 }

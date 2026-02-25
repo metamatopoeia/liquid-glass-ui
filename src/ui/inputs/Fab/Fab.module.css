@@ -11,23 +11,23 @@
   cursor: pointer;
   user-select: none;
   text-decoration: none;
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-weight: 500;
   font-size: 0.875rem;
   width: 56px;
   height: 56px;
   border-radius: 50%;
   color: #fff;
-  --lg-bg-opacity: 0.25;
-  background: var(--lg-surface);
+  --lg-glass-bg-opacity: 0.25;
+  background: var(--lg-glass-surface);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-soft),
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft),
               inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: box-shadow var(--lg-transition),
-              transform var(--lg-transition),
-              --lg-border-opacity var(--lg-transition);
+  transition: box-shadow var(--lg-glass-transition),
+              transform var(--lg-glass-transition),
+              --lg-border-opacity var(--lg-glass-transition);
 }
 
 .fab::after {
@@ -35,14 +35,14 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--lg-reflection);
+  background: var(--lg-glass-reflection);
   pointer-events: none;
 }
 
 .fab:hover {
-  --lg-bg-opacity: 0.35;
-  --lg-border-opacity: 0.4;
-  box-shadow: var(--lg-shadow-soft),
+  --lg-glass-bg-opacity: 0.35;
+  --lg-glass-border-opacity: 0.4;
+  box-shadow: var(--lg-glass-shadow-soft),
               inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
@@ -52,5 +52,5 @@
 
 .fab:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--lg-border);
+  box-shadow: 0 0 0 2px var(--lg-glass-border);
 }

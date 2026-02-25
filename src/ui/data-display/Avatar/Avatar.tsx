@@ -1,5 +1,6 @@
 import * as RadixAvatar from '@radix-ui/react-avatar';
-import { CSSProperties } from 'react';
+import { CSSProperties, useMemo } from 'react';
+import { useComponentOverrides } from '../../../theme/useComponentOverrides';
 import s from './Avatar.module.css';
 
 interface AvatarProps {
@@ -17,12 +18,15 @@ export default function Avatar({
   className = '',
   style,
 }: AvatarProps) {
-  const classes = [s.avatar, className].filter(Boolean).join(' ');
+  const ownerState = useMemo(() => ({ size }), [size]);
+  const overrides = useComponentOverrides('Avatar', ownerState, { className, style });
+
+  const classes = [s.avatar, overrides.className].filter(Boolean).join(' ');
 
   return (
     <RadixAvatar.Root
       className={classes}
-      style={{ width: size, height: size, ...style }}
+      style={{ width: size, height: size, ...overrides.style }}
     >
       <RadixAvatar.Image className={s.image} src={src} alt={alt} />
       <RadixAvatar.Fallback className={s.fallback} delayMs={300}>

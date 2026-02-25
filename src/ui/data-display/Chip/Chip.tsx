@@ -1,4 +1,5 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode, useMemo } from "react";
+import { useComponentOverrides } from "../../../theme/useComponentOverrides";
 import s from "./Chip.module.css";
 
 interface ChipProps extends HTMLAttributes<HTMLSpanElement> {
@@ -15,14 +16,18 @@ export default function Chip({
   label,
   variant = "filled",
   className = "",
+  style,
   ...rest
 }: ChipProps) {
-  const classes = [variantMap[variant] ?? s.chip, className]
+  const ownerState = useMemo(() => ({ variant }), [variant]);
+  const overrides = useComponentOverrides("Chip", ownerState, { className, style });
+
+  const classes = [variantMap[variant] ?? s.chip, overrides.className]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <span className={classes} {...rest}>
+    <span className={classes} style={overrides.style} {...rest}>
       {label}
     </span>
   );

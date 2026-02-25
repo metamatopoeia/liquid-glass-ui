@@ -1,19 +1,19 @@
 /* ============================================================
-   CUP — Liquid Glass Shared Utility Classes
+   Liquid Glass — Shared Utility Classes
    Three-layer stack: base (backdrop) → stroke (border) → specular (::after)
    ============================================================ */
 
 /* --- Base glass surface --- */
 .glassBase {
   position: relative;
-  background: var(--lg-surface);
-  backdrop-filter: blur(var(--lg-blur));
-  -webkit-backdrop-filter: blur(var(--lg-blur));
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-soft), var(--lg-shadow-sharp);
-  transition: transform var(--lg-transition),
-              box-shadow var(--lg-transition),
-              border-color var(--lg-transition);
+  background: var(--lg-glass-surface);
+  backdrop-filter: blur(var(--lg-glass-blur));
+  -webkit-backdrop-filter: blur(var(--lg-glass-blur));
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft), var(--lg-glass-shadow-sharp);
+  transition: transform var(--lg-glass-transition),
+              box-shadow var(--lg-glass-transition),
+              border-color var(--lg-glass-transition);
 }
 
 .glassBase::after {
@@ -21,29 +21,29 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--lg-reflection);
+  background: var(--lg-glass-reflection);
   pointer-events: none;
 }
 
 /* --- Elevation: Thin (toolbars, separators) --- */
 .glassThin {
   composes: glassBase;
-  --lg-blur: 4px;
-  --lg-bg-opacity: 0.15;
+  --lg-glass-blur: 8px;
+  --lg-glass-bg-opacity: 0.05;
 }
 
 /* --- Elevation: Regular (cards, sidebars) --- */
 .glassRegular {
   composes: glassBase;
-  --lg-blur: 12px;
-  --lg-bg-opacity: 0.25;
+  --lg-glass-blur: 20px;
+  --lg-glass-bg-opacity: 0.12;
 }
 
 /* --- Elevation: Thick (modals, popovers, menus) --- */
 .glassThick {
   composes: glassBase;
-  --lg-blur: 24px;
-  --lg-bg-opacity: 0.45;
+  --lg-glass-blur: 40px;
+  --lg-glass-bg-opacity: 0.25;
 }
 
 /* --- Interaction: Stateful compression --- */
@@ -54,11 +54,11 @@
 
 /* --- Interaction: Edge lensing on hover --- */
 .edgeLens:hover {
-  --lg-border-opacity: 0.4;
+  --lg-glass-border-opacity: 0.4;
 }
 
 /* --- Focus: Glass-native focus ring --- */
 .glassFocus:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--lg-border);
+  box-shadow: 0 0 0 2px var(--lg-glass-border);
 }

@@ -1,4 +1,5 @@
-import { HTMLAttributes, ImgHTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributes, ImgHTMLAttributes, ReactNode, useMemo } from 'react';
+import { useComponentOverrides } from '../../../theme/useComponentOverrides';
 import styles from './Card.module.css';
 
 /* --- Card --- */
@@ -11,13 +12,17 @@ export default function Card({
   className = '',
   onClick,
   children,
+  style,
   ...rest
 }: CardProps) {
+  const ownerState = useMemo(() => ({ variant }), [variant]);
+  const overrides = useComponentOverrides('Card', ownerState, { className, style });
+
   const variantClass = variant === 'outlined' ? styles.cardOutlined : styles.cardElevated;
-  const classes = [variantClass, onClick && styles.cardClickable, className].filter(Boolean).join(' ');
+  const classes = [variantClass, onClick && styles.cardClickable, overrides.className].filter(Boolean).join(' ');
 
   return (
-    <article className={classes} onClick={onClick} {...rest}>
+    <article className={classes} onClick={onClick} style={overrides.style} {...rest}>
       {children}
     </article>
   );

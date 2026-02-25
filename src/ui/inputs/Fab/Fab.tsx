@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, useMemo } from 'react';
+import { useComponentOverrides } from '../../../theme/useComponentOverrides';
 import s from './Fab.module.css';
 
 interface FabProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -6,14 +7,19 @@ interface FabProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export default function Fab({
+  color = 'primary',
   className = '',
   children,
+  style,
   ...rest
 }: FabProps) {
-  const classes = [s.fab, className].filter(Boolean).join(' ');
+  const ownerState = useMemo(() => ({ color }), [color]);
+  const overrides = useComponentOverrides('Fab', ownerState, { className, style });
+
+  const classes = [s.fab, overrides.className].filter(Boolean).join(' ');
 
   return (
-    <button className={classes} {...rest}>
+    <button className={classes} style={overrides.style} {...rest}>
       {children}
     </button>
   );

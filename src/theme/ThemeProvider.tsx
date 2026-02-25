@@ -1,55 +1,68 @@
 import {
-  createContext,
-  useContext,
   useMemo,
+  useId,
   forwardRef,
   type ReactNode,
-  type CSSProperties,
   type HTMLAttributes,
 } from 'react';
-import type { LiquidGlassTheme } from './types';
-import { themeToVarMap } from './defaults';
-
-interface ThemeContextValue {
-  theme: Partial<LiquidGlassTheme>;
-}
-
-const ThemeContext = createContext<ThemeContextValue>({ theme: {} });
-
-export function useTheme(): ThemeContextValue {
-  return useContext(ThemeContext);
-}
+import type { LiquidGlassTheme, LiquidGlassThemeInput, DeepPartial } from './types';
+import { createTheme } from './createTheme';
+import { useColorScheme } from './useColorScheme';
+import { ThemeContext } from './useTheme';
 
 interface ThemeProviderProps extends HTMLAttributes<HTMLDivElement> {
-  theme?: Partial<LiquidGlassTheme>;
+  theme?: LiquidGlassTheme | DeepPartial<LiquidGlassThemeInput>;
+  mode?: 'light' | 'dark' | 'system';
   children: ReactNode;
 }
 
-function themeToCSSVars(theme: Partial<LiquidGlassTheme>): CSSProperties {
-  const vars: Record<string, string> = {};
-  for (const key in theme) {
-    const cssVar = themeToVarMap[key as keyof LiquidGlassTheme];
-    const value = theme[key as keyof LiquidGlassTheme];
-    if (cssVar && value !== undefined) {
-      vars[cssVar] = value;
-    }
-  }
-  return vars as CSSProperties;
+function isCreatedTheme(
+  value: LiquidGlassTheme | DeepPartial<LiquidGlassThemeInput>,
+): value is LiquidGlassTheme {
+  return typeof (value as LiquidGlassTheme).getCssVars === 'function';
+}
+
+function cssVarsToString(vars: Record<string, string>): string {
+  return Object.entries(vars)
+    .map(([key, value]) => `${key}: ${value};`)
+    .join(' ');
 }
 
 const ThemeProvider = forwardRef<HTMLDivElement, ThemeProviderProps>(
-  function ThemeProvider({ theme = {}, children, style, ...rest }, ref) {
-    const contextValue = useMemo(() => ({ theme }), [theme]);
-    const cssVars = useMemo(() => themeToCSSVars(theme), [theme]);
+  function ThemeProvider(
+    { theme: themeProp, mode: modeProp = 'system', children, ...rest },
+    ref,
+  ) {
+    const reactId = useId();
+    const themeId = `lg-${reactId.replace(/:/g, '')}`;
+
+    const resolvedTheme = useMemo<LiquidGlassTheme>(() => {
+      if (!themeProp) return createTheme();
+      if (isCreatedTheme(themeProp)) return themeProp;
+      return createTheme(themeProp);
+    }, [themeProp]);
+
+    const { mode, setMode } = useColorScheme(modeProp);
+
+    const cssVarString = useMemo(() => {
+      const vars = resolvedTheme.getCssVars(mode);
+      return cssVarsToString(vars);
+    }, [resolvedTheme, mode]);
+
+    const contextValue = useMemo(
+      () => ({ theme: resolvedTheme, mode, setMode }),
+      [resolvedTheme, mode, setMode],
+    );
 
     return (
       <ThemeContext.Provider value={contextValue}>
-        <div ref={ref} style={{ ...cssVars, ...style }} {...rest}>
+        <div ref={ref} data-lg-theme={themeId} data-lg-mode={mode} {...rest}>
+          <style>{`[data-lg-theme="${themeId}"] { ${cssVarString} }`}</style>
           {children}
         </div>
       </ThemeContext.Provider>
     );
-  }
+  },
 );
 
 export default ThemeProvider;

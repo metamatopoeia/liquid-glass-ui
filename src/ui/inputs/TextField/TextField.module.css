@@ -10,68 +10,68 @@
 }
 
 .label {
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--lg-color-text-on-surface);
+  color: var(--lg-palette-text-on-surface);
   margin-bottom: 4px;
   line-height: 1.4375em;
   letter-spacing: 0.00938em;
-  transition: color var(--lg-transition);
+  transition: color var(--lg-glass-transition);
 }
 
 .labelFocused {
   composes: label;
-  color: var(--lg-color-primary);
+  color: var(--lg-palette-primary-main);
 }
 
 .labelError {
   composes: label;
-  color: var(--lg-color-error);
+  color: var(--lg-palette-error-main);
 }
 
 .input,
 .textarea {
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4375em;
   letter-spacing: 0.00938em;
-  color: var(--lg-color-text-primary);
+  color: var(--lg-palette-text-primary);
   box-sizing: border-box;
   width: 100%;
   padding: 16.5px 14px;
   border-radius: var(--lg-radius-sm);
   outline: none;
-  background: var(--lg-surface);
-  --lg-bg-opacity: 0.06;
+  background: var(--lg-glass-surface);
+  --lg-glass-bg-opacity: 0.06;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--lg-border);
-  transition: border-color var(--lg-transition),
-              background-color var(--lg-transition);
+  border: 1px solid var(--lg-glass-border);
+  transition: border-color var(--lg-glass-transition),
+              background-color var(--lg-glass-transition);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--lg-color-text-disabled);
+  color: var(--lg-palette-text-disabled);
 }
 
 .input:hover,
 .textarea:hover {
-  --lg-border-opacity: 0.4;
+  --lg-glass-border-opacity: 0.4;
 }
 
 .input:focus,
 .textarea:focus {
-  border-color: var(--lg-color-primary);
+  border-color: var(--lg-palette-primary-main);
   border-width: 2px;
   padding: 15.5px 13px;
 }
 
 .inputError,
 .textareaError {
-  border-color: var(--lg-color-error);
+  border-color: var(--lg-palette-error-main);
 }
 
 .textarea {
@@ -79,10 +79,10 @@
 }
 
 .helper {
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--lg-color-text-on-surface-secondary);
+  color: var(--lg-palette-text-on-surface-secondary);
   margin-top: 3px;
   line-height: 1.66;
   letter-spacing: 0.03333em;
@@ -90,5 +90,5 @@
 
 .helperError {
   composes: helper;
-  color: var(--lg-color-error);
+  color: var(--lg-palette-error-main);
 }

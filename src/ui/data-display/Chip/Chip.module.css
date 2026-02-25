@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 24px;
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-size: 0.8125rem;
   border-radius: 16px;
   white-space: nowrap;
@@ -13,24 +13,24 @@
   outline: 0;
   padding: 0 10px;
   box-sizing: border-box;
-  color: var(--lg-color-text-primary);
-  background: var(--lg-surface);
-  --lg-bg-opacity: 0.08;
+  color: var(--lg-palette-text-primary);
+  background: var(--lg-glass-surface);
+  --lg-glass-bg-opacity: 0.08;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid transparent;
-  transition: background-color var(--lg-transition);
+  transition: background-color var(--lg-glass-transition);
 }
 
 .filled {
   composes: chip;
-  background-color: var(--lg-color-chip-filled);
+  background-color: var(--lg-palette-chip-filled);
   font-weight: 600;
 }
 
 .outlined {
   composes: chip;
   background: transparent;
-  --lg-bg-opacity: 0;
-  border: 1px solid var(--lg-border);
+  --lg-glass-bg-opacity: 0;
+  border: 1px solid var(--lg-glass-border);
 }

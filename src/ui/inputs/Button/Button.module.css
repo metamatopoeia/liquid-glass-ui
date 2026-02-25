@@ -12,7 +12,7 @@
   user-select: none;
   vertical-align: middle;
   text-decoration: none;
-  font-family: var(--lg-font-family);
+  font-family: var(--lg-typography-font-family);
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -21,11 +21,11 @@
   min-width: 64px;
   padding: 6px 16px;
   border-radius: var(--lg-radius-sm);
-  transition: background-color var(--lg-transition),
-              box-shadow var(--lg-transition),
-              border-color var(--lg-transition),
-              color var(--lg-transition),
-              transform var(--lg-transition);
+  transition: background-color var(--lg-glass-transition),
+              box-shadow var(--lg-glass-transition),
+              border-color var(--lg-glass-transition),
+              color var(--lg-glass-transition),
+              transform var(--lg-glass-transition);
 }
 
 .button:active {
@@ -34,11 +34,11 @@
 
 .button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--lg-border);
+  box-shadow: 0 0 0 2px var(--lg-glass-border);
 }
 
 .button:disabled {
-  color: var(--lg-color-text-disabled);
+  color: var(--lg-palette-text-disabled);
   pointer-events: none;
 }
 
@@ -46,13 +46,13 @@
 .contained {
   composes: button;
   color: #fff;
-  background: var(--lg-surface);
-  --lg-bg-opacity: 0.2;
+  background: var(--lg-glass-surface);
+  --lg-glass-bg-opacity: 0.2;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: var(--lg-color-primary);
-  border: 1px solid var(--lg-border);
-  box-shadow: var(--lg-shadow-soft);
+  background-color: var(--lg-palette-primary-main);
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft);
 }
 
 .contained::after {
@@ -60,42 +60,42 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--lg-reflection);
+  background: var(--lg-glass-reflection);
   pointer-events: none;
 }
 
 .contained:hover {
-  background-color: var(--lg-color-primary-dark);
-  --lg-border-opacity: 0.4;
+  background-color: var(--lg-palette-primary-dark);
+  --lg-glass-border-opacity: 0.4;
 }
 
 .contained:disabled {
   background-color: rgba(0, 0, 0, 0.12);
   box-shadow: none;
-  color: var(--lg-color-text-disabled);
+  color: var(--lg-palette-text-disabled);
 }
 
 /* --- Contained Error --- */
 .containedError {
   composes: contained;
-  background-color: var(--lg-color-error);
+  background-color: var(--lg-palette-error-main);
 }
 
 .containedError:hover {
-  background-color: var(--lg-color-error-dark);
+  background-color: var(--lg-palette-error-dark);
 }
 
 /* --- Outlined --- */
 .outlined {
   composes: button;
-  color: var(--lg-color-primary);
-  border: 1px solid var(--lg-border);
+  color: var(--lg-palette-primary-main);
+  border: 1px solid var(--lg-glass-border);
   background: transparent;
 }
 
 .outlined:hover {
-  background-color: var(--lg-color-action-hover);
-  --lg-border-opacity: 0.4;
+  background-color: var(--lg-palette-action-hover);
+  --lg-glass-border-opacity: 0.4;
 }
 
 .outlined:disabled {
@@ -105,12 +105,12 @@
 /* --- Text --- */
 .text {
   composes: button;
-  color: var(--lg-color-primary);
+  color: var(--lg-palette-primary-main);
   background-color: transparent;
 }
 
 .text:hover {
-  background-color: var(--lg-color-action-hover);
+  background-color: var(--lg-palette-action-hover);
 }
 
 /* --- Inherit --- */

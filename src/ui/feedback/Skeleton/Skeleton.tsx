@@ -1,4 +1,5 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, useMemo } from 'react';
+import { useComponentOverrides } from '../../../theme/useComponentOverrides';
 import s from './Skeleton.module.css';
 
 const variantMap: Record<string, string> = {
@@ -21,9 +22,12 @@ export default function Skeleton({
   style,
   ...rest
 }: SkeletonProps) {
+  const ownerState = useMemo(() => ({ variant }), [variant]);
+  const overrides = useComponentOverrides('Skeleton', ownerState, { className, style });
+
   const classes = [
     variantMap[variant] ?? s.text,
-    className,
+    overrides.className,
   ]
     .filter(Boolean)
     .join(' ');
@@ -34,7 +38,7 @@ export default function Skeleton({
       style={{
         ...(width !== undefined ? { width } : {}),
         ...(height !== undefined ? { height } : {}),
-        ...style,
+        ...overrides.style,
       }}
       {...rest}
     />

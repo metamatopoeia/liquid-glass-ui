@@ -1,7 +1,7 @@
 /* Separator — Glass border color */
 
 .separator {
-  background-color: var(--lg-border);
+  background-color: var(--lg-glass-border);
   border: none;
   margin: 0;
 }

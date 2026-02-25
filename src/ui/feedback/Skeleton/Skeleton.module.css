@@ -7,8 +7,8 @@
 }
 
 .skeleton {
-  background: var(--lg-surface);
-  --lg-bg-opacity: 0.1;
+  background: var(--lg-glass-surface);
+  --lg-glass-bg-opacity: 0.1;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   animation: glassPulse 2s ease-in-out 0.5s infinite;
