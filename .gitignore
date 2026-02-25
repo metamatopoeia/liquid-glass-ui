@@ -186,3 +186,5 @@ jspm_packages/
 # Windsurf
 .windsurf/
 .windsurfrules
+*storybook.log
+storybook-static
