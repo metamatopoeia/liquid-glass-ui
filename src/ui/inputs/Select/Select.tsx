@@ -1,7 +1,7 @@
 import * as RadixSelect from '@radix-ui/react-select';
 import { ReactNode, useId } from 'react';
 import s from './Select.module.css';
-import tfStyles from './TextField.module.css';
+import tfStyles from '../TextField/TextField.module.css';
 
 interface SelectOption {
   value: string;
