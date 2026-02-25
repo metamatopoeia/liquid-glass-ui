@@ -8,7 +8,13 @@ const preview: Preview = {
     (Story) =>
       createElement(
         ThemeProvider,
-        { style: { minHeight: '100vh', padding: '2rem' } },
+        {
+          style: {
+            minHeight: '100vh',
+            padding: '2rem',
+            background: 'url("https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=80&fit=crop") center / cover no-repeat fixed',
+          },
+        },
         createElement(Story),
       ),
   ],

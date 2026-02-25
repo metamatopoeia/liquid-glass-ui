@@ -13,7 +13,7 @@ import { ThemeContext } from './useTheme';
 interface ThemeProviderProps extends HTMLAttributes<HTMLDivElement> {
   theme?: LiquidGlassTheme | DeepPartial<LiquidGlassThemeInput>;
   mode?: 'light' | 'dark' | 'system';
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 function isCreatedTheme(
