@@ -41,9 +41,7 @@
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --minify",
     "test": "npm run type-check",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run test && npm run build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -60,20 +58,9 @@
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "storybook": "^10.2.12",
-    "@storybook/react-vite": "^10.2.12",
-    "@chromatic-com/storybook": "^5.0.1",
-    "@storybook/addon-vitest": "^10.2.12",
-    "@storybook/addon-a11y": "^10.2.12",
-    "@storybook/addon-docs": "^10.2.12",
-    "@storybook/addon-onboarding": "^10.2.12",
-    "vitest": "^4.0.18",
-    "playwright": "^1.58.2",
-    "@vitest/browser-playwright": "^4.0.18",
-    "@vitest/coverage-v8": "^4.0.18"
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   }
 }
