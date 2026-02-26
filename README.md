@@ -2,7 +2,7 @@
 
 A React component library for building interfaces with translucent, depth-aware surfaces inspired by Apple's Liquid Glass design language. Built on [Radix UI](https://www.radix-ui.com/) primitives, styled with CSS Variables and CSS Modules, and bundled with [tsup](https://tsup.egoist.dev/).
 
-[![npm version](https://badge.fury.io/js/@metamatopoeia/liquid-glass-ui.svg)](https://badge.fury.io/js/@metamatopoeia/liquid-glass-ui)
+[![npm version](https://badge.fury.io/js/@metamatopoeia%2Fliquid-glass-ui.svg)](https://www.npmjs.com/package/@metamatopoeia/liquid-glass-ui)
 ![No Pull Requests](https://img.shields.io/badge/PRs-not_accepted-red.svg)
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -119,21 +119,44 @@ All design tokens are exposed as `--lg-{group}-{token}` CSS variables (e.g. `--l
 
 **[Read the full Theming Guide →](docs/Theme.md)**
 
-## Development
+## MCP Server
+
+Liquid Glass UI ships an [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that gives AI coding assistants in-context knowledge of every component, prop, CSS variable, and theming API — without needing to search docs.
+
+### Add to your IDE
+
+**Windsurf / Cursor** — add to your MCP config:
+
+```json
+{
+  "mcpServers": {
+    "liquid-glass-ui": {
+      "command": "npx",
+      "args": ["-y", "@metamatopoeia/liquid-glass-mcp"]
+    }
+  }
+}
+```
+
+**Claude Desktop** — add to `claude_desktop_config.json` under the same `mcpServers` key.
+
+**Claude Code**:
 
 ```bash
-# Install dependencies
-npm install
-
-# Build the library (CJS + ESM + DTS + CSS)
-npm run build
-
-# Output is written to dist/
-#   dist/index.js       — CommonJS
-#   dist/index.mjs      — ES Module
-#   dist/index.d.ts     — TypeScript declarations
-#   dist/index.css      — Extracted CSS
+claude mcp add liquid-glass-ui -- npx -y @metamatopoeia/liquid-glass-mcp
 ```
+
+### What it provides
+
+| Capability                | Details                                                                                |
+| :------------------------ | :------------------------------------------------------------------------------------- |
+| `useLiquidGlassDocs` tool | Returns the master doc index so the AI knows what's available                          |
+| `fetchDocs` tool          | Fetches per-component docs, theming guide, CSS variable reference, or recipes by key   |
+| Resources                 | `liquid-glass://components/{name}`, `liquid-glass://theme/*`, `liquid-glass://recipes` |
+| `create-theme` prompt     | Guided generation of a valid `createTheme()` call with your brand colors               |
+| `add-component` prompt    | Scaffolds correct imports and usage for any component                                  |
+
+**[MCP Server README →](mcp-server/README.md)**
 
 ## Tech Stack
 

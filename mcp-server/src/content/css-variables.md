@@ -1,0 +1,130 @@
+# CSS Variable Reference
+
+All tokens are namespaced under `--lg-{group}-{token}` using kebab-case. These are set on `:root` via the static stylesheet and scoped per-provider via `<style>` tags.
+
+## Glass Physics
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-glass-blur` | `20px` |
+| `--lg-glass-bg-opacity` | `0.12` |
+| `--lg-glass-border-opacity` | `0.2` |
+| `--lg-glass-surface` | `rgba(255, 255, 255, var(--lg-glass-bg-opacity))` |
+| `--lg-glass-border` | `rgba(255, 255, 255, var(--lg-glass-border-opacity))` |
+| `--lg-glass-reflection` | `linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.15) 100%)` |
+| `--lg-glass-easing` | `cubic-bezier(0.32, 0.72, 0, 1)` |
+| `--lg-glass-transition-duration` | `400ms` |
+| `--lg-glass-transition` | `400ms cubic-bezier(0.32, 0.72, 0, 1)` |
+| `--lg-glass-shadow-soft` | `0 20px 50px rgba(0, 0, 0, 0.1)` |
+| `--lg-glass-shadow-sharp` | `0 1px 2px rgba(0, 0, 0, 0.05)` |
+
+## Palette: Primary
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-palette-primary-main` | `#18181b` |
+| `--lg-palette-primary-dark` | `#09090b` |
+| `--lg-palette-primary-light` | `#3f3f46` |
+
+## Palette: Error
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-palette-error-main` | `#d32f2f` |
+| `--lg-palette-error-dark` | `#c62828` |
+| `--lg-palette-error-light` | `#ef5350` |
+| `--lg-palette-error-bg` | `#fdeded` |
+| `--lg-palette-error-text` | `#5f2120` |
+
+## Palette: Status Colors
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-palette-warning-bg` | `#fff4e5` |
+| `--lg-palette-warning-text` | `#663c00` |
+| `--lg-palette-info-bg` | `#e5f6fd` |
+| `--lg-palette-info-text` | `#014361` |
+| `--lg-palette-success-bg` | `#edf7ed` |
+| `--lg-palette-success-text` | `#1e4620` |
+
+## Palette: Text
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-palette-text-primary` | `#18181b` |
+| `--lg-palette-text-secondary` | `#52525b` |
+| `--lg-palette-text-disabled` | `rgba(0, 0, 0, 0.38)` |
+| `--lg-palette-text-on-surface` | `#fff` |
+| `--lg-palette-text-on-surface-secondary` | `#d4d4d8` |
+
+## Palette: Background
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-palette-background-default` | `#fff` |
+| `--lg-palette-background-paper` | `#fff` |
+| `--lg-palette-background-fallback` | `linear-gradient(135deg, #09090b 0%, #18181b 25%, #27272a 50%, #3f3f46 75%, #52525b 100%)` |
+
+## Palette: Other
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-palette-action-hover` | `rgba(0, 0, 0, 0.04)` |
+| `--lg-palette-divider` | `rgba(0, 0, 0, 0.12)` |
+| `--lg-palette-chip-filled` | `#e4e4e7` |
+
+## Typography
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-typography-font-family` | `system-ui, -apple-system, sans-serif` |
+
+## Radius
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-radius-sm` | `4px` |
+| `--lg-radius-md` | `8px` |
+| `--lg-radius-lg` | `16px` |
+
+## Shadows
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-shadows-sm` | `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)` |
+| `--lg-shadows-md` | `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)` |
+| `--lg-shadows-lg` | `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)` |
+
+## Transitions
+
+| Variable | Default |
+| :--- | :--- |
+| `--lg-transitions-fast` | `150ms cubic-bezier(0.4, 0, 0.2, 1)` |
+| `--lg-transitions-normal` | `250ms cubic-bezier(0.4, 0, 0.2, 1)` |
+
+## Dark Mode Overrides
+
+Applied automatically via `@media (prefers-color-scheme: dark)`:
+
+| Variable | Dark Value |
+| :--- | :--- |
+| `--lg-glass-surface` | `rgba(0, 0, 0, 0.35)` |
+| `--lg-glass-border` | `rgba(255, 255, 255, 0.1)` |
+| `--lg-glass-bg-opacity` | `0.35` |
+| `--lg-palette-text-primary` | `#f4f4f5` |
+| `--lg-palette-text-secondary` | `#a1a1aa` |
+
+## Accessibility Overrides
+
+### prefers-reduced-motion
+
+| Variable | Value |
+| :--- | :--- |
+| `--lg-glass-transition-duration` | `0ms` |
+
+### prefers-reduced-transparency
+
+| Variable | Value |
+| :--- | :--- |
+| `--lg-glass-bg-opacity` | `0.98` |
+| `--lg-glass-blur` | `0px` |

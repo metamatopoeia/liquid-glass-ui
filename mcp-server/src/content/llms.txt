@@ -1,0 +1,31 @@
+# Liquid Glass UI
+
+> A React component library for building liquid glass interfaces. CSS-variable-driven theming, Radix UI primitives, glassmorphic design system.
+
+## Documentation Sections
+
+- [components/Button](components/Button): Button component — contained, outlined, text variants with color and size options
+- [components/Card](components/Card): Card surface — outlined/elevated variants with CardContent and CardMedia sub-components
+- [components/AppBar](components/AppBar): App bar header surface with glass effect
+- [components/Paper](components/Paper): Paper surface — elevation or outlined variants
+- [components/Dialog](components/Dialog): Dialog modal — compound component (Root, Trigger, Content, Title, Description, Actions, Close)
+- [components/AlertDialog](components/AlertDialog): Alert dialog — compound component for destructive confirmations
+- [components/Select](components/Select): Select dropdown — Radix-based with label, options, placeholder support
+- [components/TextField](components/TextField): Text field input — supports label, helper text, error state, multiline
+- [components/Chip](components/Chip): Chip — filled/outlined variants for tags and status indicators
+- [components/Avatar](components/Avatar): Avatar — image with fallback, Radix-based, configurable size
+- [components/Fab](components/Fab): Floating action button
+- [components/IconButton](components/IconButton): Icon button — small/medium sizes
+- [components/Separator](components/Separator): Separator — horizontal/vertical orientation, Radix-based
+- [components/Skeleton](components/Skeleton): Skeleton loader — text, circular, rectangular variants
+- [components/Spinner](components/Spinner): Spinner — SVG loading indicator with configurable size and color
+- [components/DropdownMenu](components/DropdownMenu): Dropdown menu — compound component (Root, Trigger, Content, Item)
+- [theme/overview](theme/overview): Full theming guide — ThemeProvider, createTheme, hooks, component overrides, recipes
+- [theme/css-variables](theme/css-variables): Complete CSS variable reference — all --lg-* tokens with defaults
+- [theme/tokens/glass](theme/tokens/glass): Glass physics tokens — blur, opacity, surface, border, reflection, easing, shadows
+- [theme/tokens/palette](theme/tokens/palette): Palette tokens — primary, error, warning, info, success, text, background, action
+- [theme/tokens/radius](theme/tokens/radius): Radius tokens — sm, md, lg
+- [theme/tokens/shadows](theme/tokens/shadows): Shadow tokens — sm, md, lg
+- [theme/tokens/transitions](theme/tokens/transitions): Transition tokens — fast, normal
+- [theme/tokens/typography](theme/tokens/typography): Typography tokens — fontFamily
+- [theme/recipes](theme/recipes): Code recipes — brand palette, dark-only overrides, runtime toggle, plain CSS override
