@@ -119,6 +119,8 @@ All design tokens are exposed as `--lg-{group}-{token}` CSS variables (e.g. `--l
 
 **[Read the full Theming Guide →](docs/Theme.md)**
 
+**[Best Practices →](docs/BEST_PRACTICES.md)**
+
 ## MCP Server
 
 Liquid Glass UI ships an [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that gives AI coding assistants in-context knowledge of every component, prop, CSS variable, and theming API — without needing to search docs.
