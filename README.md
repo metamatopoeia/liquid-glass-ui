@@ -1,6 +1,6 @@
 # Liquid Glass UI
 
-A React component library for building interfaces with translucent, depth-aware surfaces inspired by Apple's Liquid Glass design language. Built on [Radix UI](https://www.radix-ui.com/) primitives, styled with CSS Variables and CSS Modules, and bundled with [tsup](https://tsup.egoist.dev/).
+A React component library for building interfaces with translucent, depth-aware surfaces inspired by the Liquid Glass design language. Built on [Radix UI](https://www.radix-ui.com/) primitives, styled with CSS Variables and CSS Modules, and bundled with [tsup](https://tsup.egoist.dev/).
 
 [![npm version](https://badge.fury.io/js/@metamatopoeia%2Fliquid-glass-ui.svg)](https://www.npmjs.com/package/@metamatopoeia/liquid-glass-ui)
 ![No Pull Requests](https://img.shields.io/badge/PRs-not_accepted-red.svg)
