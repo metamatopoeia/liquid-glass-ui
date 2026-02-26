@@ -102,14 +102,6 @@ The two-step pattern: first call `useLiquidGlassDocs` to discover available docs
 
 Button, Card, AppBar, Paper, Dialog, AlertDialog, Select, TextField, Chip, Avatar, Fab, IconButton, Separator, Skeleton, Spinner, DropdownMenu
 
-## Development
-
-```bash
-cd mcp-server
-npm install
-npm run build
-```
-
 ### Testing with MCP Inspector
 
 ```bash
