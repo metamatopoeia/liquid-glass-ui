@@ -11,7 +11,7 @@ Only the latest version of the `@metamatopoeia/liquid-glass-ui` package is suppo
 ## Reporting a Vulnerability
 If you discover a potential security vulnerability in this project, please **do not** open a public issue. Instead, please report it privately.
 
-Please send an email to **[INSERT EMAIL]** with the following details:
+Please send an email to **metamatopoeia@gmail.com** with the following details:
 1. The nature of the vulnerability.
 2. Steps to reproduce the issue.
 3. Potential impact.

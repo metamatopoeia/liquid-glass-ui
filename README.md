@@ -2,7 +2,7 @@
 
 A React component library for building interfaces with translucent, depth-aware surfaces inspired by Apple's Liquid Glass design language. Built on [Radix UI](https://www.radix-ui.com/) primitives, styled with CSS Variables and CSS Modules, and bundled with [tsup](https://tsup.egoist.dev/).
 
-[![npm version](https://badge.fury.io/js/liquid-glass-ui.svg)](https://badge.fury.io/js/liquid-glass-ui)
+[![npm version](https://badge.fury.io/js/@metamatopoeia/liquid-glass-ui.svg)](https://badge.fury.io/js/@metamatopoeia/liquid-glass-ui)
 ![No Pull Requests](https://img.shields.io/badge/PRs-not_accepted-red.svg)
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -19,7 +19,7 @@ A React component library for building interfaces with translucent, depth-aware 
 ## Installation
 
 ```bash
-npm install liquid-glass-ui
+npm install @metamatopoeia/liquid-glass-ui
 ```
 
 **Peer dependencies:** `react >= 18` and `react-dom >= 18`.
@@ -29,14 +29,14 @@ npm install liquid-glass-ui
 Import the stylesheet once at your app's entry point, then use any component:
 
 ```tsx
-import "liquid-glass-ui/styles.css";
+import "@metamatopoeia/liquid-glass-ui/styles.css";
 import {
   ThemeProvider,
   createTheme,
   Button,
   Card,
   CardContent,
-} from "liquid-glass-ui";
+} from "@metamatopoeia/liquid-glass-ui";
 
 const theme = createTheme({
   palette: {

@@ -13,4 +13,4 @@ To ensure a productive environment, I ask that all participants:
 I reserve the right to moderate, hide, or delete comments and close issues that violate these standards. Users who engage in persistent or severe harassment will be blocked from the repository.
 
 ## Reporting
-If you witness or experience inappropriate behavior, please contact me privately at **[INSERT EMAIL]**.
+If you witness or experience inappropriate behavior, please contact me privately at **metamatopoeia@gmail.com**.
