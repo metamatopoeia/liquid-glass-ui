@@ -122,7 +122,9 @@ export type ComponentName =
   | 'Separator'
   | 'Skeleton'
   | 'Spinner'
-  | 'DropdownMenu';
+  | 'DropdownMenu'
+  | 'SpeedDial'
+  | 'SpeedDialAction';
 
 export interface ComponentStyleOverride<SlotName extends string = string> {
   styleOverrides?: Partial<Record<
@@ -159,6 +161,8 @@ export type SeparatorSlot = 'root';
 export type SkeletonSlot = 'root';
 export type SpinnerSlot = 'root';
 export type DropdownMenuSlot = 'content' | 'item';
+export type SpeedDialSlot = 'root' | 'fab' | 'actions';
+export type SpeedDialActionSlot = 'root' | 'fab' | 'label';
 
 /* === Vars Mirror === */
 

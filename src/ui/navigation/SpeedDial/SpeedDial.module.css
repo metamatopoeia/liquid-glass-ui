@@ -1,0 +1,280 @@
+/* SpeedDial — Navigation: expandable action cluster with liquid glass styling */
+
+/* === Root container === */
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+/* === Direction variants ===
+   flex-direction controls which side of the FAB the actions appear on.
+   --sd-closed-translate is the offset actions animate from when closed.
+*/
+
+.directionUp {
+  flex-direction: column-reverse;
+  --sd-closed-translate: translateY(16px);
+}
+
+.directionDown {
+  flex-direction: column;
+  --sd-closed-translate: translateY(-16px);
+}
+
+.directionLeft {
+  flex-direction: row-reverse;
+  --sd-closed-translate: translateX(16px);
+}
+
+.directionRight {
+  flex-direction: row;
+  --sd-closed-translate: translateX(-16px);
+}
+
+/* === Hidden (e.g. on scroll) === */
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === Trigger FAB === */
+
+.fab {
+  /* Reset */
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /* Size */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  /* Typography */
+  font-family: var(--lg-typography-font-family);
+  font-weight: 500;
+  font-size: 0.875rem;
+  /* Glass — Thick elevation */
+  color: var(--lg-palette-text-on-surface);
+  --lg-glass-bg-opacity: 0.25;
+  background: var(--lg-glass-surface);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: box-shadow var(--lg-glass-transition),
+              transform var(--lg-glass-transition),
+              background var(--lg-glass-transition);
+}
+
+.fab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-glass-reflection);
+  pointer-events: none;
+}
+
+.fab:hover {
+  --lg-glass-bg-opacity: 0.35;
+  --lg-glass-border-opacity: 0.4;
+  box-shadow: var(--lg-glass-shadow-soft),
+              inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.fab:active {
+  transform: scale(0.97);
+}
+
+.fab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lg-glass-border);
+}
+
+/* === FAB icon transition (icon ↔ openIcon) === */
+
+.fabIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: opacity var(--lg-glass-transition),
+              transform var(--lg-glass-transition);
+}
+
+.fabIconVisible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.fabIconHidden {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+  pointer-events: none;
+}
+
+/* === Actions container ===
+   flex-direction: inherit propagates the root direction to the action list,
+   which naturally places the first action closest to the FAB for all directions.
+*/
+
+.actions {
+  display: flex;
+  flex-direction: inherit;
+  align-items: center;
+  gap: 8px;
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity var(--lg-glass-transition),
+              transform var(--lg-glass-transition);
+}
+
+.actionsClosed {
+  opacity: 0;
+  transform: var(--sd-closed-translate, translateY(16px));
+  pointer-events: none;
+}
+
+/* === Individual action wrapper (label + button) === */
+
+.actionWrapper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* === Action button (smaller FAB, Regular elevation) === */
+
+.action {
+  /* Reset */
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /* Size */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Glass — Regular elevation */
+  color: var(--lg-palette-text-on-surface);
+  --lg-glass-bg-opacity: 0.12;
+  background: var(--lg-glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-soft);
+  transition: transform var(--lg-glass-transition),
+              box-shadow var(--lg-glass-transition),
+              opacity var(--lg-glass-transition),
+              background var(--lg-glass-transition);
+}
+
+.action::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-glass-reflection);
+  pointer-events: none;
+}
+
+.action:hover {
+  --lg-glass-bg-opacity: 0.25;
+  --lg-glass-border-opacity: 0.4;
+  box-shadow: var(--lg-glass-shadow-soft),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.action:active {
+  transform: scale(0.97);
+}
+
+.action:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lg-glass-border);
+}
+
+.action:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.actionClosed {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* === Tooltip label (glass pill) === */
+
+.label {
+  position: relative;
+  padding: 4px 10px;
+  border-radius: var(--lg-radius-sm);
+  white-space: nowrap;
+  font-family: var(--lg-typography-font-family);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--lg-palette-text-primary);
+  /* Glass — Regular elevation */
+  --lg-glass-bg-opacity: 0.12;
+  background: var(--lg-glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--lg-glass-border);
+  box-shadow: var(--lg-glass-shadow-sharp);
+  opacity: 1;
+  transition: opacity var(--lg-glass-transition);
+}
+
+.label::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lg-glass-reflection);
+  pointer-events: none;
+}
+
+.labelHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* === Accessibility === */
+
+@media (prefers-reduced-transparency: reduce) {
+  .action,
+  .label {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    --lg-glass-bg-opacity: 0.98;
+  }
+
+  .fab {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    --lg-glass-bg-opacity: 0.98;
+  }
+}

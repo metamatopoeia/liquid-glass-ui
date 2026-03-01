@@ -19,6 +19,7 @@ import SeparatorMd from './components/Separator.md';
 import SkeletonMd from './components/Skeleton.md';
 import SpinnerMd from './components/Spinner.md';
 import DropdownMenuMd from './components/DropdownMenu.md';
+import SpeedDialMd from './components/SpeedDial.md';
 
 export const LLMS_TXT = llmsTxt;
 
@@ -39,6 +40,7 @@ export const COMPONENT_DOCS: Record<string, string> = {
   Skeleton: SkeletonMd,
   Spinner: SpinnerMd,
   DropdownMenu: DropdownMenuMd,
+  SpeedDial: SpeedDialMd,
 };
 
 export const COMPONENT_NAMES = Object.keys(COMPONENT_DOCS);

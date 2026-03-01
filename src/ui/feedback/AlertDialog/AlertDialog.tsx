@@ -1,8 +1,17 @@
 import * as RadixAlertDialog from '@radix-ui/react-alert-dialog';
-import { ReactNode } from 'react';
+import { useEffect, type ComponentPropsWithoutRef, type ReactNode } from 'react';
 import s from './AlertDialog.module.css';
 
-export const AlertDialogRoot = RadixAlertDialog.Root;
+export function AlertDialogRoot(props: ComponentPropsWithoutRef<typeof RadixAlertDialog.Root>) {
+  useEffect(() => {
+    console.warn(
+      '[liquid-glass-ui] AlertDialog is deprecated and will be removed in v2.0.0. ' +
+        'Please migrate to the Dialog component instead.'
+    );
+  }, []);
+  return <RadixAlertDialog.Root {...props} />;
+}
+
 export const AlertDialogTrigger = RadixAlertDialog.Trigger;
 
 interface AlertDialogContentProps {

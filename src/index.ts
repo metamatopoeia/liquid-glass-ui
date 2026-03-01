@@ -44,6 +44,8 @@ export type {
   SkeletonSlot,
   SpinnerSlot,
   DropdownMenuSlot,
+  SpeedDialSlot,
+  SpeedDialActionSlot,
 } from "./theme/types";
 
 /* --- Inputs --- */
@@ -93,3 +95,11 @@ export {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "./ui/navigation/DropdownMenu/DropdownMenu";
+export {
+  SpeedDial,
+  SpeedDialAction,
+} from "./ui/navigation/SpeedDial/SpeedDial";
+export type {
+  SpeedDialProps,
+  SpeedDialActionProps,
+} from "./ui/navigation/SpeedDial/SpeedDial";

@@ -1,5 +1,7 @@
 # AlertDialog
 
+> **Deprecated:** `AlertDialog` is deprecated and will be removed in v2.0.0. Migrate to the [`Dialog`](components/Dialog) component instead. `AlertDialogRoot` logs a `console.warn` on mount as a reminder.
+
 A modal dialog for destructive confirmations, built on Radix UI AlertDialog primitives. Requires explicit user action to dismiss (no close on overlay click).
 
 ## Import
@@ -23,10 +25,10 @@ import {
 
 Re-export of `@radix-ui/react-alert-dialog` Root. Controls open/close state.
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `open` | `boolean` | — | Controlled open state. |
-| `onOpenChange` | `(open: boolean) => void` | — | Callback when state changes. |
+| Prop           | Type                      | Default | Description                  |
+| :------------- | :------------------------ | :------ | :--------------------------- |
+| `open`         | `boolean`                 | —       | Controlled open state.       |
+| `onOpenChange` | `(open: boolean) => void` | —       | Callback when state changes. |
 
 ### AlertDialogTrigger
 
@@ -36,33 +38,33 @@ Re-export of Radix AlertDialog Trigger.
 
 Renders portal, overlay, and glass content container.
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `children` | `ReactNode` | — | Dialog body. |
-| `className` | `string` | `''` | Additional CSS class. |
+| Prop        | Type        | Default | Description           |
+| :---------- | :---------- | :------ | :-------------------- |
+| `children`  | `ReactNode` | —       | Dialog body.          |
+| `className` | `string`    | `''`    | Additional CSS class. |
 
 ### AlertDialogTitle
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `children` | `ReactNode` | — | Title text. |
-| `className` | `string` | `''` | Additional CSS class. |
+| Prop        | Type        | Default | Description           |
+| :---------- | :---------- | :------ | :-------------------- |
+| `children`  | `ReactNode` | —       | Title text.           |
+| `className` | `string`    | `''`    | Additional CSS class. |
 
 ### AlertDialogDescription
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `children` | `ReactNode` | — | Description text. |
-| `className` | `string` | `''` | Additional CSS class. |
+| Prop        | Type        | Default | Description           |
+| :---------- | :---------- | :------ | :-------------------- |
+| `children`  | `ReactNode` | —       | Description text.     |
+| `className` | `string`    | `''`    | Additional CSS class. |
 
 ### AlertDialogActions
 
 Container for Cancel/Action buttons.
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `children` | `ReactNode` | — | Action buttons. |
-| `className` | `string` | `''` | Additional CSS class. |
+| Prop        | Type        | Default | Description           |
+| :---------- | :---------- | :------ | :-------------------- |
+| `children`  | `ReactNode` | —       | Action buttons.       |
+| `className` | `string`    | `''`    | Additional CSS class. |
 
 ### AlertDialogCancel
 
@@ -74,13 +76,13 @@ Re-export of Radix AlertDialog Action.
 
 ## Slots
 
-| Slot | Description |
-| :--- | :--- |
-| `overlay` | The backdrop overlay. |
-| `content` | The glass content container. |
-| `title` | The dialog title. |
-| `description` | The dialog description. |
-| `actions` | The actions row container. |
+| Slot          | Description                  |
+| :------------ | :--------------------------- |
+| `overlay`     | The backdrop overlay.        |
+| `content`     | The glass content container. |
+| `title`       | The dialog title.            |
+| `description` | The dialog description.      |
+| `actions`     | The actions row container.   |
 
 ## Usage
 
@@ -99,7 +101,9 @@ import {
 
 <AlertDialogRoot>
   <AlertDialogTrigger asChild>
-    <Button variant="text" color="error">Delete Account</Button>
+    <Button variant="text" color="error">
+      Delete Account
+    </Button>
   </AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
@@ -117,5 +121,5 @@ import {
       </AlertDialogAction>
     </AlertDialogActions>
   </AlertDialogContent>
-</AlertDialogRoot>
+</AlertDialogRoot>;
 ```

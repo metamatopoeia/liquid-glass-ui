@@ -9,7 +9,7 @@
 - [components/AppBar](components/AppBar): App bar header surface with glass effect
 - [components/Paper](components/Paper): Paper surface — elevation or outlined variants
 - [components/Dialog](components/Dialog): Dialog modal — compound component (Root, Trigger, Content, Title, Description, Actions, Close)
-- [components/AlertDialog](components/AlertDialog): Alert dialog — compound component for destructive confirmations
+- [components/AlertDialog](components/AlertDialog): Alert dialog — compound component for destructive confirmations (**deprecated**, migrate to Dialog)
 - [components/Select](components/Select): Select dropdown — Radix-based with label, options, placeholder support
 - [components/TextField](components/TextField): Text field input — supports label, helper text, error state, multiline
 - [components/Chip](components/Chip): Chip — filled/outlined variants for tags and status indicators
@@ -20,6 +20,7 @@
 - [components/Skeleton](components/Skeleton): Skeleton loader — text, circular, rectangular variants
 - [components/Spinner](components/Spinner): Spinner — SVG loading indicator with configurable size and color
 - [components/DropdownMenu](components/DropdownMenu): Dropdown menu — compound component (Root, Trigger, Content, Item)
+- [components/SpeedDial](components/SpeedDial): Speed dial — expandable FAB action cluster with four directions, controlled/uncontrolled modes
 - [theme/overview](theme/overview): Full theming guide — ThemeProvider, createTheme, hooks, component overrides, recipes
 - [theme/css-variables](theme/css-variables): Complete CSS variable reference — all --lg-* tokens with defaults
 - [theme/tokens/glass](theme/tokens/glass): Glass physics tokens — blur, opacity, surface, border, reflection, easing, shadows
