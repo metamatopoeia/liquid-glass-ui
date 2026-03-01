@@ -25,6 +25,10 @@
     "library",
     "design-system"
   ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "sideEffects": [
     "./dist/index.css",
     "**/*.css"
