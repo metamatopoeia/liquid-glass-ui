@@ -25,6 +25,9 @@ jobs:
           node-version: 20
           registry-url: "https://registry.npmjs.org"
 
+      - name: Upgrade npm (>=10.9.1 required for Trusted Publishers)
+        run: npm install -g npm@latest
+
       - name: Install Dependencies
         run: npm ci
 
