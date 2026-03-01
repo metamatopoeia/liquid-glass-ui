@@ -6,6 +6,7 @@ on:
 
 jobs:
   close-pr:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Close PR with a comment
