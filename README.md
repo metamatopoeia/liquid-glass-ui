@@ -14,7 +14,7 @@ A React component library for building interfaces with translucent, depth-aware 
 - **Dark mode** — automatic `prefers-color-scheme: dark` support out of the box
 - **Accessibility** — respects `prefers-reduced-motion` and `prefers-reduced-transparency`
 - **Tree-shakeable** — ESM and CJS outputs with full TypeScript declarations
-- **Zero runtime CSS-in-JS** — all styles are static CSS Modules extracted at build time
+- **Zero runtime CSS generation** — all styles are static CSS Modules extracted at build time
 
 ## Installation
 
