@@ -1,5 +1,11 @@
 # @metamatopoeia/liquid-glass-ui
 
+## 1.3.1
+
+### Patch Changes
+
+- [`c619e83`](https://github.com/metamatopoeia/liquid-glass-ui/commit/c619e83acb530dd13645e5957731a736ee5a25eb) Thanks [@sds-smith](https://github.com/sds-smith)! - sync mcp server to root
+
 ## 1.3.0
 
 ### Minor Changes
