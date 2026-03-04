@@ -188,3 +188,6 @@ jspm_packages/
 .windsurfrules
 *storybook.log
 storybook-static
+
+# Local docs
+_docs
