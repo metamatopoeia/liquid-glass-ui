@@ -1,6 +1,6 @@
 {
   "name": "@metamatopoeia/liquid-glass-ui",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A React UI library for building liquid glass interfaces.",
   "author": "Shawn D Smith",
   "license": "MIT",
@@ -12,8 +12,13 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
-  "sideEffects": ["./dist/index.css", "**/*.css"],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/index.css",
+    "**/*.css"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -32,7 +37,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@metamatopoeia/liquid-glass-core": "^1.4.0",
+    "@metamatopoeia/liquid-glass-core": "^1.4.1",
     "@radix-ui/react-alert-dialog": "^1.0.0",
     "@radix-ui/react-avatar": "^1.0.0",
     "@radix-ui/react-dialog": "^1.0.0",
