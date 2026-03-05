@@ -6,6 +6,16 @@ A React component library for building interfaces with translucent, depth-aware 
 ![No Pull Requests](https://img.shields.io/badge/PRs-not_accepted-red.svg)
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
+## Monorepo Structure
+
+This repository is a [Turborepo](https://turborepo.dev/) monorepo with npm workspaces:
+
+| Package                                       | Description                                             | npm                                                                                                  |
+| :-------------------------------------------- | :------------------------------------------------------ | :--------------------------------------------------------------------------------------------------- |
+| [`packages/core`](packages/core/)             | Shared types, tokens, and utilities (platform-agnostic) | [`@metamatopoeia/liquid-glass-core`](https://www.npmjs.com/package/@metamatopoeia/liquid-glass-core) |
+| [`packages/react`](packages/react/)           | React web components (Radix UI + CSS Modules)           | [`@metamatopoeia/liquid-glass-ui`](https://www.npmjs.com/package/@metamatopoeia/liquid-glass-ui)     |
+| [`packages/mcp-server`](packages/mcp-server/) | MCP server for AI coding assistants                     | [`@metamatopoeia/liquid-glass-mcp`](https://www.npmjs.com/package/@metamatopoeia/liquid-glass-mcp)   |
+
 ## Features
 
 - **Liquid Glass physics** — backdrop blur, refraction, specular reflections, and viscosity transitions driven entirely by CSS variables
@@ -92,18 +102,19 @@ function App() {
 
 ### Feedback
 
-| Component     | Description                                                                                                                                                                                                              |
-| :------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AlertDialog` | Radix AlertDialog with thick glass overlay (`AlertDialogRoot`, `AlertDialogTrigger`, `AlertDialogContent`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogActions`, `AlertDialogCancel`, `AlertDialogAction`) |
-| `Dialog`      | Radix Dialog with thick glass overlay (`DialogRoot`, `DialogTrigger`, `DialogContent`, `DialogTitle`, `DialogDescription`, `DialogActions`, `DialogClose`)                                                               |
-| `Skeleton`    | Glass-pulsing placeholder — `text`, `circular`, or `rectangular`                                                                                                                                                         |
-| `Spinner`     | Animated SVG spinner                                                                                                                                                                                                     |
+| Component                                   | Description                                                                                                                                                                                                              |
+| :------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AlertDialog` _(deprecated — use `Dialog`)_ | Radix AlertDialog with thick glass overlay (`AlertDialogRoot`, `AlertDialogTrigger`, `AlertDialogContent`, `AlertDialogTitle`, `AlertDialogDescription`, `AlertDialogActions`, `AlertDialogCancel`, `AlertDialogAction`) |
+| `Dialog`                                    | Radix Dialog with thick glass overlay (`DialogRoot`, `DialogTrigger`, `DialogContent`, `DialogTitle`, `DialogDescription`, `DialogActions`, `DialogClose`)                                                               |
+| `Skeleton`                                  | Glass-pulsing placeholder — `text`, `circular`, or `rectangular`                                                                                                                                                         |
+| `Spinner`                                   | Animated SVG spinner                                                                                                                                                                                                     |
 
 ### Navigation
 
-| Component      | Description                                                                                                                  |
-| :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| `DropdownMenu` | Radix DropdownMenu with glass content (`DropdownMenuRoot`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem`) |
+| Component                       | Description                                                                                                                  |
+| :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
+| `DropdownMenu`                  | Radix DropdownMenu with glass content (`DropdownMenuRoot`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem`) |
+| `SpeedDial` / `SpeedDialAction` | Expandable FAB action cluster with directional layouts (`up`, `down`, `left`, `right`)                                       |
 
 ## Theming
 
@@ -158,7 +169,7 @@ claude mcp add liquid-glass-ui -- npx -y @metamatopoeia/liquid-glass-mcp
 | `create-theme` prompt     | Guided generation of a valid `createTheme()` call with your brand colors               |
 | `add-component` prompt    | Scaffolds correct imports and usage for any component                                  |
 
-**[MCP Server README →](mcp-server/README.md)**
+**[MCP Server README →](packages/mcp-server/README.md)**
 
 ## Tech Stack
 
@@ -168,6 +179,7 @@ claude mcp add liquid-glass-ui -- npx -y @metamatopoeia/liquid-glass-mcp
 - **CSS Variables** — runtime theming via `--lg-*` tokens
 - **tsup** — zero-config bundler powered by esbuild
 - **TypeScript** — strict mode, full declaration output
+- **Turborepo** — monorepo build orchestration with caching
 
 ## Community & Legal
 

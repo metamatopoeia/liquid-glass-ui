@@ -1,5 +1,3 @@
-import type { CSSProperties, ReactNode } from 'react';
-
 /* === Utility Types === */
 
 export type DeepPartial<T> = {
@@ -104,7 +102,7 @@ export interface ThemeZIndex {
   tooltip: number;
 }
 
-/* === Component Overrides === */
+/* === Component Names === */
 
 export type ComponentName =
   | 'Button'
@@ -125,23 +123,6 @@ export type ComponentName =
   | 'DropdownMenu'
   | 'SpeedDial'
   | 'SpeedDialAction';
-
-export interface ComponentStyleOverride<SlotName extends string = string> {
-  styleOverrides?: Partial<Record<
-    SlotName,
-    | CSSProperties
-    | ((params: { theme: LiquidGlassTheme }) => CSSProperties)
-  >>;
-  variants?: Array<{
-    props:
-      | Record<string, unknown>
-      | ((props: Record<string, unknown>) => boolean);
-    style:
-      | CSSProperties
-      | ((params: { theme: LiquidGlassTheme }) => CSSProperties);
-  }>;
-  defaultProps?: Record<string, unknown>;
-}
 
 /* --- Per-component slot maps --- */
 
@@ -164,24 +145,7 @@ export type DropdownMenuSlot = 'content' | 'item';
 export type SpeedDialSlot = 'root' | 'fab' | 'actions';
 export type SpeedDialActionSlot = 'root' | 'fab' | 'label';
 
-/* === Vars Mirror === */
-
-type VarsLeaf<T> = T extends string
-  ? string
-  : T extends object
-    ? { [K in keyof T]: VarsLeaf<T[K]> }
-    : never;
-
-export type ThemeVars = {
-  palette: VarsLeaf<ThemePalette>;
-  glass: VarsLeaf<GlassTokens>;
-  typography: VarsLeaf<ThemeTypography>;
-  radius: VarsLeaf<ThemeRadius>;
-  shadows: VarsLeaf<ThemeShadows>;
-  transitions: VarsLeaf<ThemeTransitions>;
-};
-
-/* === Input type (consumer passes to createTheme) === */
+/* === Core Theme Input (consumer passes to createTheme) === */
 
 export interface LiquidGlassThemeInput {
   palette: ThemePalette;
@@ -192,7 +156,7 @@ export interface LiquidGlassThemeInput {
   transitions: ThemeTransitions;
   spacing: ThemeSpacing;
   zIndex: ThemeZIndex;
-  components?: Partial<Record<ComponentName, ComponentStyleOverride>>;
+  components?: Partial<Record<ComponentName, unknown>>;
   colorSchemes?: {
     light?: DeepPartial<Omit<LiquidGlassThemeInput, 'colorSchemes' | 'components'>>;
     dark?: DeepPartial<Omit<LiquidGlassThemeInput, 'colorSchemes' | 'components'>>;
@@ -200,9 +164,9 @@ export interface LiquidGlassThemeInput {
   cssVarPrefix?: string;
 }
 
-/* === Root Theme (output of createTheme) === */
+/* === Core Resolved Theme (platform-agnostic) === */
 
-export interface LiquidGlassTheme {
+export interface ResolvedThemeTokens {
   palette: ThemePalette;
   glass: GlassTokens;
   typography: ThemeTypography;
@@ -211,11 +175,11 @@ export interface LiquidGlassTheme {
   transitions: ThemeTransitions;
   spacing: CallableSpacing;
   zIndex: ThemeZIndex;
-  components?: Partial<Record<ComponentName, ComponentStyleOverride>>;
-  vars: ThemeVars;
-  getCssVars: (mode?: 'light' | 'dark') => Record<string, string>;
+  components?: Partial<Record<ComponentName, unknown>>;
+  light: LiquidGlassThemeInput;
+  dark: LiquidGlassThemeInput;
 }
 
 /* === Deprecated compat alias === */
 
-export type ThemeTokenKey = keyof LiquidGlassTheme;
+export type ThemeTokenKey = keyof ResolvedThemeTokens;

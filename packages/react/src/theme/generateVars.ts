@@ -1,4 +1,5 @@
-import type { ThemeVars, LiquidGlassThemeInput } from './types';
+import type { ThemeVars } from './types';
+import type { LiquidGlassThemeInput } from '@metamatopoeia/liquid-glass-core';
 
 function camelToKebab(str: string): string {
   return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);

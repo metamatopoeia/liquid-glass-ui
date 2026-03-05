@@ -1,0 +1,55 @@
+{
+  "name": "@metamatopoeia/liquid-glass-ui",
+  "version": "1.4.0",
+  "description": "A React UI library for building liquid glass interfaces.",
+  "author": "Shawn D Smith",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metamatopoeia/liquid-glass-ui.git",
+    "directory": "packages/react"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "sideEffects": ["./dist/index.css", "**/*.css"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "npm run type-check",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@metamatopoeia/liquid-glass-core": "^1.4.0",
+    "@radix-ui/react-alert-dialog": "^1.0.0",
+    "@radix-ui/react-avatar": "^1.0.0",
+    "@radix-ui/react-dialog": "^1.0.0",
+    "@radix-ui/react-dropdown-menu": "^2.0.0",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-separator": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}

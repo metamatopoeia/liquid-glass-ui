@@ -41,16 +41,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Publish Root Package
+      - name: Build All Packages
         if: steps.changesets.outputs.hasChangesets == 'false'
-        run: |
-          npm run build
-          npm publish --provenance --access public
+        run: npm run build
 
-      - name: Build and Publish MCP Server
+      - name: Publish Changed Packages
         if: steps.changesets.outputs.hasChangesets == 'false'
-        working-directory: mcp-server
-        run: |
-          npm ci
-          npm run build
-          npm publish --provenance --access public
+        run: npx changeset publish --provenance --access public

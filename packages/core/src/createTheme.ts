@@ -1,12 +1,11 @@
 import type {
-  LiquidGlassTheme,
+  ResolvedThemeTokens,
   LiquidGlassThemeInput,
   DeepPartial,
   CallableSpacing,
 } from './types';
 import { defaultLightTokens, darkOverrides } from './defaults';
 import { deepMerge } from './deepMerge';
-import { generateVarsMirror, generateCssVars } from './generateVars';
 
 function createCallableSpacing(unit: number): CallableSpacing {
   const fn = ((factor: number) => `${factor * unit}px`) as CallableSpacing;
@@ -16,9 +15,7 @@ function createCallableSpacing(unit: number): CallableSpacing {
 
 export function createTheme(
   options?: DeepPartial<LiquidGlassThemeInput>,
-): LiquidGlassTheme {
-  const prefix = options?.cssVarPrefix ?? '--lg';
-
+): ResolvedThemeTokens {
   const lightBase = deepMerge(
     defaultLightTokens as unknown as Record<string, unknown>,
     (options?.colorSchemes?.light ?? {}) as Record<string, unknown>,
@@ -43,13 +40,6 @@ export function createTheme(
     (options?.colorSchemes?.dark ?? {}) as Record<string, unknown>,
   ) as unknown as LiquidGlassThemeInput;
 
-  const vars = generateVarsMirror(merged, prefix);
-
-  const getCssVars = (mode?: 'light' | 'dark'): Record<string, string> => {
-    const source = mode === 'dark' ? darkBase : merged;
-    return generateCssVars(source, prefix);
-  };
-
   return {
     palette: merged.palette,
     glass: merged.glass,
@@ -60,7 +50,7 @@ export function createTheme(
     spacing: createCallableSpacing(merged.spacing.unit),
     zIndex: merged.zIndex,
     components: merged.components,
-    vars,
-    getCssVars,
+    light: merged,
+    dark: darkBase,
   };
 }

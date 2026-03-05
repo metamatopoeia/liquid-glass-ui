@@ -3,7 +3,9 @@
   "changelog": ["@changesets/changelog-github", { "repo": "metamatopoeia/liquid-glass-ui" }],
   "commit": false,
   "fixed": [],
-  "linked": [],
+  "linked": [
+    ["@metamatopoeia/liquid-glass-core", "@metamatopoeia/liquid-glass-ui"]
+  ],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
